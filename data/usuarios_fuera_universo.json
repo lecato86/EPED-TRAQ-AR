@@ -1,7 +1,7 @@
 {
   "actualizado": "2026-09-07",
   "criterio": "Usuarios cuya institución declarada no corresponde a ninguno de los 36 hospitales del universo. No se asocian a fichas.",
-  "total": 17,
+  "total": 18,
   "usuarios": [
     {
       "nombre": "Cecilia Mazzuz",
@@ -111,17 +111,24 @@
     },
     {
       "nombre": "Andrea Carolina Atencio",
-      "profesion": null,
+      "profesion": "Kinesióloga",
       "institucionDeclarada": "Domicilios particulares",
       "provincia": "Mendoza",
-      "email": null
+      "email": "carolinatencio81@gmail.com"
     },
     {
       "nombre": "Luciana Fonseca",
-      "profesion": null,
+      "profesion": "Kinesióloga",
       "institucionDeclarada": "Hospital de Clínicas Presidente Dr. Nicolás Avellaneda",
       "provincia": "Tucumán",
-      "email": null
+      "email": "lucy.fonseca95@gmail.com"
+    },
+    {
+      "nombre": "Abigail Meneces",
+      "profesion": "Médica pediatra — Terapia intensiva infantil",
+      "institucionDeclarada": "Hospital Municipal Pediátrico Federico Falcón",
+      "provincia": "Buenos Aires",
+      "email": "abigail.meneces@gmail.com"
     }
   ]
 }

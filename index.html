@@ -171,10 +171,17 @@
     font-family:"Archivo",system-ui,sans-serif; font-size:1rem; font-weight:700; display:block;
   }
   #tooltip .tt-head span{font-size:.74rem; opacity:.92; letter-spacing:.04em; text-transform:uppercase}
-  #tooltip .tt-body{padding:.55rem .85rem .7rem}
-  #tooltip ol{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.35rem}
-  #tooltip ol li::marker{color:var(--muted); font-variant-numeric:tabular-nums}
-  #tooltip .tt-city{color:var(--muted); font-size:.75rem; display:block}
+  #tooltip .tt-body{padding:.55rem .85rem .75rem; display:flex; flex-direction:column; gap:.45rem}
+  #tooltip .tt-sec{
+    margin:.15rem 0 0; font-family:"Archivo",system-ui,sans-serif; font-weight:600;
+    font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  }
+  #tooltip .tt-inst{margin:0}
+  #tooltip .tt-inst b{display:block; font-weight:600; font-size:.8rem; line-height:1.35}
+  #tooltip .tt-u{display:block; color:var(--ink-2); font-size:.76rem; padding-left:.7rem}
+  #tooltip .tt-u i{color:var(--muted); font-style:normal}
+  #tooltip .tt-none{display:block; color:var(--muted); font-size:.74rem; padding-left:.7rem}
+  #tooltip .tt-div{border:none; border-top:1px solid var(--hairline); margin:.2rem 0 0}
   #tooltip .tt-note{margin:0; color:var(--ink-2); font-size:.78rem}
   .tt-h1{background:var(--a1); color:var(--tt-ink1)} .tt-h2{background:var(--a2); color:var(--tt-ink2)}
   .tt-h3{background:var(--a3); color:var(--tt-ink3)} .tt-h4{background:var(--a4); color:var(--tt-ink4)}
@@ -198,7 +205,7 @@
       <div class="stat"><b>5</b><span>áreas</span></div>
       <div class="stat"><b>24</b><span>jurisdicciones</span></div>
       <div class="stat"><b>7,2</b><span>promedio por área</span></div>
-      <div class="stat"><b>33</b><span>usuarios registrados</span></div>
+      <div class="stat"><b>34</b><span>usuarios registrados</span></div>
     </div>
   </header>
 
@@ -290,19 +297,21 @@
       </div>
       <p class="nota">36 hospitales no se reparten exactos entre 5 áreas: el rango 6–8 es la partición
       más pareja posible manteniendo áreas geográficamente contiguas. Pasá el cursor por una provincia
-      para ver sus hospitales.</p>
+      para ver sus hospitales y los profesionales registrados en cada uno; si en esa provincia hay
+      profesionales de instituciones que no integran el estudio, aparecen aparte en la misma ventana.</p>
     </div>
   </div>
 
   <section class="listado">
     <h2>Fichas de hospitales</h2>
-    <p class="seccion-nota">De los 33 usuarios registrados, 16 declararon como institución
-    uno de los 36 hospitales del universo y figuran en su ficha. Los 17 restantes declararon otras
+    <p class="seccion-nota">De los 34 usuarios registrados, 16 declararon como institución
+    uno de los 36 hospitales del universo y figuran en su ficha. Los 18 restantes declararon otras
     instituciones y se listan en el apartado final. Un usuario se asocia a un hospital solo cuando la institución
-    declarada corresponde a ese hospital, nunca por provincia o ciudad.</p>
+    declarada corresponde a ese hospital, nunca por provincia o ciudad. Sofía Fernández Sohar declaró dos
+    hospitales del universo (Elizalde y Posadas) y figura en ambas fichas, contada una sola vez.</p>
     <div class="ficha-area">
         <h3 class="ficha-area-h"><span class="chip a1bg"></span>Área 1 — Metropolitana
-          <span class="area-n">8 hospitales · 7 usuarios</span></h3>
+          <span class="area-n">8 hospitales · 8 usuarios</span></h3>
         <div class="fichas-grid">
         <article class="ficha">
           <div class="ficha-top"><span class="ficha-num">1</span><span class="ficha-prov">CABA</span><span class="ficha-badge sin">Sin usuarios</span></div>
@@ -347,10 +356,10 @@
           
         </article>
         <article class="ficha con-usuarios">
-          <div class="ficha-top"><span class="ficha-num">8</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge a1bg con">1 usuario</span></div>
+          <div class="ficha-top"><span class="ficha-num">8</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge a1bg con">2 usuarios</span></div>
           <h4>Hospital Nacional Profesor Alejandro Posadas</h4>
           <p class="ficha-meta">El Palomar, Morón · General de alta complejidad · referente pediátrico</p>
-          <ul class="ficha-users"><li><b>Adriana Arce</b><span>Kinesióloga</span><a href="mailto:arceadrianakinesiologia@gmail.com">arceadrianakinesiologia@gmail.com</a></li></ul>
+          <ul class="ficha-users"><li><b>Adriana Arce</b><span>Kinesióloga</span><a href="mailto:arceadrianakinesiologia@gmail.com">arceadrianakinesiologia@gmail.com</a></li><li><b>Sofía Fernández Sohar</b><span>Kinesióloga</span><a href="mailto:sofiasohar91@gmail.com">sofiasohar91@gmail.com</a></li></ul>
         </article>
         </div>
       </div>
@@ -574,8 +583,9 @@
           <tr><td>Gimena Herrera</td><td>Kinesióloga</td><td>IPRO</td><td>Mendoza</td><td><a href="mailto:gimenitaherrera07@gmail.com">gimenitaherrera07@gmail.com</a></td></tr>
           <tr><td>Carla Denicola</td><td>Licenciada en Terapia Física</td><td>Fleni Escobar</td><td>Buenos Aires</td><td><a href="mailto:car610.cd@gmail.com">car610.cd@gmail.com</a></td></tr>
           <tr><td>Claudia Vanesa Rojas</td><td>Kinesióloga</td><td>HIGA P. V. Cordero</td><td>Buenos Aires</td><td><a href="mailto:vanerojas64@gmail.com">vanerojas64@gmail.com</a></td></tr>
-          <tr><td>Andrea Carolina Atencio</td><td>—</td><td>Domicilios particulares</td><td>Mendoza</td><td>—</td></tr>
-          <tr><td>Luciana Fonseca</td><td>—</td><td>Hospital de Clínicas Presidente Dr. Nicolás Avellaneda</td><td>Tucumán</td><td>—</td></tr>
+          <tr><td>Andrea Carolina Atencio</td><td>Kinesióloga</td><td>Domicilios particulares</td><td>Mendoza</td><td><a href="mailto:carolinatencio81@gmail.com">carolinatencio81@gmail.com</a></td></tr>
+          <tr><td>Luciana Fonseca</td><td>Kinesióloga</td><td>Hospital de Clínicas Presidente Dr. Nicolás Avellaneda</td><td>Tucumán</td><td><a href="mailto:lucy.fonseca95@gmail.com">lucy.fonseca95@gmail.com</a></td></tr>
+          <tr><td>Abigail Meneces</td><td>Médica pediatra — Terapia intensiva infantil</td><td>Hospital Municipal Pediátrico Federico Falcón</td><td>Buenos Aires</td><td><a href="mailto:abigail.meneces@gmail.com">abigail.meneces@gmail.com</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -591,7 +601,7 @@
 
 <script>
 (function(){
-  var DATA = {"provArea":{"Ciudad de Buenos Aires":1,"Buenos Aires":1,"Santa Fe":2,"Entre Ríos":2,"Corrientes":2,"Misiones":2,"Chaco":2,"Formosa":2,"Jujuy":3,"Salta":3,"Tucumán":3,"Catamarca":3,"Santiago del Estero":3,"La Rioja":3,"Córdoba":4,"San Juan":4,"Mendoza":4,"San Luis":4,"La Pampa":4,"Neuquén":5,"Río Negro":5,"Chubut":5,"Santa Cruz":5,"Tierra del Fuego":5,"Islas Malvinas":5},"areaNames":{"1":"Metropolitana","2":"NEA · Litoral","3":"NOA","4":"Centro · Cuyo","5":"Patagonia"},"hospitales":[{"n":1,"nombre":"Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":2,"nombre":"Hospital General de Niños “Dr. Ricardo Gutiérrez”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":3,"nombre":"Hospital General de Niños “Pedro de Elizalde”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":4,"nombre":"Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”","ciudad":"La Plata","prov":"Buenos Aires"},{"n":5,"nombre":"Hospital del Niño “Prof. Dr. Ramón Exeni”","ciudad":"San Justo, La Matanza","prov":"Buenos Aires"},{"n":6,"nombre":"Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”","ciudad":"Mar del Plata","prov":"Buenos Aires"},{"n":7,"nombre":"Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”","ciudad":"San Isidro","prov":"Buenos Aires"},{"n":8,"nombre":"Hospital Nacional Profesor Alejandro Posadas","ciudad":"El Palomar, Morón","prov":"Buenos Aires"},{"n":9,"nombre":"Hospital Interzonal de Niños “Eva Perón”","ciudad":"San Fernando del Valle de Catamarca","prov":"Catamarca"},{"n":10,"nombre":"Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”","ciudad":"Resistencia","prov":"Chaco"},{"n":11,"nombre":"Hospital Zonal de Trelew “Dr. Adolfo Margara”","ciudad":"Trelew","prov":"Chubut"},{"n":12,"nombre":"Hospital Regional de Comodoro Rivadavia","ciudad":"Comodoro Rivadavia","prov":"Chubut"},{"n":13,"nombre":"Hospital de Niños de la Santísima Trinidad","ciudad":"Córdoba","prov":"Córdoba"},{"n":14,"nombre":"Hospital Pediátrico del Niño Jesús","ciudad":"Córdoba","prov":"Córdoba"},{"n":15,"nombre":"Hospital Infantil Municipal","ciudad":"Córdoba","prov":"Córdoba"},{"n":16,"nombre":"Hospital Pediátrico “Juan Pablo II”","ciudad":"Corrientes","prov":"Corrientes"},{"n":17,"nombre":"Hospital Materno Infantil San Roque","ciudad":"Paraná","prov":"Entre Ríos"},{"n":18,"nombre":"Hospital de la Madre y el Niño","ciudad":"Formosa","prov":"Formosa"},{"n":19,"nombre":"Hospital Materno Infantil “Dr. Héctor Quintana”","ciudad":"San Salvador de Jujuy","prov":"Jujuy"},{"n":20,"nombre":"Hospital “Dr. Lucio Molas”","ciudad":"Santa Rosa","prov":"La Pampa"},{"n":21,"nombre":"Hospital de la Madre y el Niño “Inmaculada Concepción de María”","ciudad":"La Rioja","prov":"La Rioja"},{"n":22,"nombre":"Hospital Pediátrico “Dr. Humberto J. Notti”","ciudad":"Guaymallén","prov":"Mendoza"},{"n":23,"nombre":"Hospital de Pediatría “Dr. Fernando Barreyro”","ciudad":"Posadas","prov":"Misiones"},{"n":24,"nombre":"Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”","ciudad":"Neuquén","prov":"Neuquén"},{"n":25,"nombre":"Hospital Zonal Bariloche “Dr. Ramón Carrillo”","ciudad":"San Carlos de Bariloche","prov":"Río Negro"},{"n":26,"nombre":"Hospital “Artémides Zatti”","ciudad":"Viedma","prov":"Río Negro"},{"n":27,"nombre":"Hospital Público Materno Infantil","ciudad":"Salta","prov":"Salta"},{"n":28,"nombre":"Hospital “Dr. Guillermo Rawson”","ciudad":"San Juan","prov":"San Juan"},{"n":29,"nombre":"Hospital Pediátrico San Luis","ciudad":"San Luis","prov":"San Luis"},{"n":30,"nombre":"Hospital Regional “Dr. José Formenti”","ciudad":"Río Gallegos","prov":"Santa Cruz"},{"n":31,"nombre":"Hospital de Niños “Dr. Orlando Alassia”","ciudad":"Santa Fe","prov":"Santa Fe"},{"n":32,"nombre":"Hospital de Niños “Víctor J. Vilela”","ciudad":"Rosario","prov":"Santa Fe"},{"n":33,"nombre":"Centro Provincial de Salud Infantil “Eva Perón” (CePSI)","ciudad":"Santiago del Estero","prov":"Santiago del Estero"},{"n":34,"nombre":"Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”","ciudad":"Ushuaia","prov":"Tierra del Fuego"},{"n":35,"nombre":"Hospital Regional Río Grande “Nuestra Señora de la Candelaria”","ciudad":"Río Grande","prov":"Tierra del Fuego"},{"n":36,"nombre":"Hospital del Niño Jesús","ciudad":"San Miguel de Tucumán","prov":"Tucumán"}]};
+  var DATA = {"provArea":{"Ciudad de Buenos Aires":1,"Buenos Aires":1,"Santa Fe":2,"Entre Ríos":2,"Corrientes":2,"Misiones":2,"Chaco":2,"Formosa":2,"Jujuy":3,"Salta":3,"Tucumán":3,"Catamarca":3,"Santiago del Estero":3,"La Rioja":3,"Córdoba":4,"San Juan":4,"Mendoza":4,"San Luis":4,"La Pampa":4,"Neuquén":5,"Río Negro":5,"Chubut":5,"Santa Cruz":5,"Tierra del Fuego":5,"Islas Malvinas":5},"areaNames":{"1":"Metropolitana","2":"NEA · Litoral","3":"NOA","4":"Centro · Cuyo","5":"Patagonia"},"hospitales":[{"n":1,"nombre":"Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”","ciudad":"CABA","prov":"Ciudad de Buenos Aires","usuarios":[]},{"n":2,"nombre":"Hospital General de Niños “Dr. Ricardo Gutiérrez”","ciudad":"CABA","prov":"Ciudad de Buenos Aires","usuarios":[{"nombre":"Silvina Carranza","prof":"Kinesióloga"}]},{"n":3,"nombre":"Hospital General de Niños “Pedro de Elizalde”","ciudad":"CABA","prov":"Ciudad de Buenos Aires","usuarios":[{"nombre":"Sofía Fernández Sohar","prof":"Kinesióloga"},{"nombre":"Yamila Betiana Nociti","prof":"Kinesióloga"},{"nombre":"María Valentina Luna","prof":"Kinesióloga"}]},{"n":4,"nombre":"Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”","ciudad":"La Plata","prov":"Buenos Aires","usuarios":[{"nombre":"Ana Rosa Fernández","prof":"Kinesióloga"},{"nombre":"Patricio Brenta","prof":"Kinesiólogo"}]},{"n":5,"nombre":"Hospital del Niño “Prof. Dr. Ramón Exeni”","ciudad":"San Justo, La Matanza","prov":"Buenos Aires","usuarios":[]},{"n":6,"nombre":"Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”","ciudad":"Mar del Plata","prov":"Buenos Aires","usuarios":[]},{"n":7,"nombre":"Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”","ciudad":"San Isidro","prov":"Buenos Aires","usuarios":[]},{"n":8,"nombre":"Hospital Nacional Profesor Alejandro Posadas","ciudad":"El Palomar, Morón","prov":"Buenos Aires","usuarios":[{"nombre":"Adriana Arce","prof":"Kinesióloga"},{"nombre":"Sofía Fernández Sohar","prof":"Kinesióloga"}]},{"n":9,"nombre":"Hospital Interzonal de Niños “Eva Perón”","ciudad":"San Fernando del Valle de Catamarca","prov":"Catamarca","usuarios":[]},{"n":10,"nombre":"Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”","ciudad":"Resistencia","prov":"Chaco","usuarios":[{"nombre":"Marcela Patricia Iglesias","prof":"Kinesióloga"}]},{"n":11,"nombre":"Hospital Zonal de Trelew “Dr. Adolfo Margara”","ciudad":"Trelew","prov":"Chubut","usuarios":[]},{"n":12,"nombre":"Hospital Regional de Comodoro Rivadavia","ciudad":"Comodoro Rivadavia","prov":"Chubut","usuarios":[]},{"n":13,"nombre":"Hospital de Niños de la Santísima Trinidad","ciudad":"Córdoba","prov":"Córdoba","usuarios":[{"nombre":"Rossi Catriel","prof":"Kinesiólogo"},{"nombre":"Prado Jesica","prof":"Kinesióloga"},{"nombre":"Aldana Núñez","prof":"Kinesióloga"},{"nombre":"Valeria Festa","prof":"Kinesióloga"}]},{"n":14,"nombre":"Hospital Pediátrico del Niño Jesús","ciudad":"Córdoba","prov":"Córdoba","usuarios":[{"nombre":"Mirtha Raiden","prof":"Neumonóloga Pediatra"}]},{"n":15,"nombre":"Hospital Infantil Municipal","ciudad":"Córdoba","prov":"Córdoba","usuarios":[]},{"n":16,"nombre":"Hospital Pediátrico “Juan Pablo II”","ciudad":"Corrientes","prov":"Corrientes","usuarios":[]},{"n":17,"nombre":"Hospital Materno Infantil San Roque","ciudad":"Paraná","prov":"Entre Ríos","usuarios":[]},{"n":18,"nombre":"Hospital de la Madre y el Niño","ciudad":"Formosa","prov":"Formosa","usuarios":[]},{"n":19,"nombre":"Hospital Materno Infantil “Dr. Héctor Quintana”","ciudad":"San Salvador de Jujuy","prov":"Jujuy","usuarios":[]},{"n":20,"nombre":"Hospital “Dr. Lucio Molas”","ciudad":"Santa Rosa","prov":"La Pampa","usuarios":[]},{"n":21,"nombre":"Hospital de la Madre y el Niño “Inmaculada Concepción de María”","ciudad":"La Rioja","prov":"La Rioja","usuarios":[]},{"n":22,"nombre":"Hospital Pediátrico “Dr. Humberto J. Notti”","ciudad":"Guaymallén","prov":"Mendoza","usuarios":[{"nombre":"Carolina Molina","prof":"Kinesióloga"}]},{"n":23,"nombre":"Hospital de Pediatría “Dr. Fernando Barreyro”","ciudad":"Posadas","prov":"Misiones","usuarios":[]},{"n":24,"nombre":"Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”","ciudad":"Neuquén","prov":"Neuquén","usuarios":[]},{"n":25,"nombre":"Hospital Zonal Bariloche “Dr. Ramón Carrillo”","ciudad":"San Carlos de Bariloche","prov":"Río Negro","usuarios":[]},{"n":26,"nombre":"Hospital “Artémides Zatti”","ciudad":"Viedma","prov":"Río Negro","usuarios":[]},{"n":27,"nombre":"Hospital Público Materno Infantil","ciudad":"Salta","prov":"Salta","usuarios":[]},{"n":28,"nombre":"Hospital “Dr. Guillermo Rawson”","ciudad":"San Juan","prov":"San Juan","usuarios":[]},{"n":29,"nombre":"Hospital Pediátrico San Luis","ciudad":"San Luis","prov":"San Luis","usuarios":[{"nombre":"Jorge Walter Argañaraz","prof":"Lic. en Enfermería"}]},{"n":30,"nombre":"Hospital Regional “Dr. José Formenti”","ciudad":"Río Gallegos","prov":"Santa Cruz","usuarios":[]},{"n":31,"nombre":"Hospital de Niños “Dr. Orlando Alassia”","ciudad":"Santa Fe","prov":"Santa Fe","usuarios":[{"nombre":"Yael Juncos","prof":"Kinesióloga"}]},{"n":32,"nombre":"Hospital de Niños “Víctor J. Vilela”","ciudad":"Rosario","prov":"Santa Fe","usuarios":[]},{"n":33,"nombre":"Centro Provincial de Salud Infantil “Eva Perón” (CePSI)","ciudad":"Santiago del Estero","prov":"Santiago del Estero","usuarios":[]},{"n":34,"nombre":"Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”","ciudad":"Ushuaia","prov":"Tierra del Fuego","usuarios":[]},{"n":35,"nombre":"Hospital Regional Río Grande “Nuestra Señora de la Candelaria”","ciudad":"Río Grande","prov":"Tierra del Fuego","usuarios":[]},{"n":36,"nombre":"Hospital del Niño Jesús","ciudad":"San Miguel de Tucumán","prov":"Tucumán","usuarios":[]}],"otras":{"Ciudad de Buenos Aires":[{"inst":"Sanatorio Sagrado Corazón","usuarios":[{"nombre":"Cecilia Mazzuz","prof":"Kinesióloga"}]},{"inst":"Clínica Suizo Argentina / Sanatorio de los Arcos / Sanatorio Finochietto","usuarios":[{"nombre":"Alfredo Kamegawa","prof":"Kinesiólogo"}]}],"Tucumán":[{"inst":"Instituto de Maternidad Nuestra Señora de las Mercedes","usuarios":[{"nombre":"Marcos Sebastián Villafañe Daona","prof":"Kinesiólogo"}]},{"inst":"Hospital de Clínicas Presidente Dr. Nicolás Avellaneda","usuarios":[{"nombre":"Luciana Fonseca","prof":"Kinesióloga"}]}],"Buenos Aires":[{"inst":"Hospital Municipal de Chivilcoy","usuarios":[{"nombre":"Dario Villalba","prof":"Kinesiólogo"}]},{"inst":"Internación domiciliaria","usuarios":[{"nombre":"Guillermo Tellechea","prof":"Kinesiólogo"}]},{"inst":"HIGA Eva Perón — San Martín","usuarios":[{"nombre":"Cecilia Giongo","prof":"Kinesióloga"}]},{"inst":"Sanatorio de la Trinidad Ramos Mejía","usuarios":[{"nombre":"Brenda Barroso","prof":"Kinesióloga"}]},{"inst":"Santa Catalina Clínica de Neurorehabilitación — sede Remeo","usuarios":[{"nombre":"Maximiliano Ayraudo","prof":"Kinesiólogo"}]},{"inst":"Fleni Escobar","usuarios":[{"nombre":"Carla Denicola","prof":"Licenciada en Terapia Física"}]},{"inst":"HIGA P. V. Cordero","usuarios":[{"nombre":"Claudia Vanesa Rojas","prof":"Kinesióloga"}]},{"inst":"Hospital Municipal Pediátrico Federico Falcón","usuarios":[{"nombre":"Abigail Meneces","prof":"Médica pediatra — Terapia intensiva infantil"}]}],"Córdoba":[{"inst":"Neoclínica","usuarios":[{"nombre":"Enrique Javier Manrique Soto","prof":"Kinesiólogo"}]}],"Mendoza":[{"inst":"Clínica Integral de Disfagia","usuarios":[{"nombre":"Gianina Mariana Ferro","prof":"Kinesióloga"}]},{"inst":"IPRO","usuarios":[{"nombre":"Gimena Herrera","prof":"Kinesióloga"}]},{"inst":"Domicilios particulares","usuarios":[{"nombre":"Andrea Carolina Atencio","prof":"Kinesióloga"}]}],"San Juan":[{"inst":"Hospital Dr. Marcial Quiroga / Sanatorio Argentino","usuarios":[{"nombre":"Daniela Coria","prof":"Kinesióloga"}]}],"Misiones":[{"inst":"Hospital Nivel 3 SAMIC Eldorado","usuarios":[{"nombre":"Mariana Vogel","prof":"Kinesióloga"}]}]}};
   var tt = document.getElementById("tooltip");
   var hospByProv = {};
   DATA.hospitales.forEach(function(h){ (hospByProv[h.prov] = hospByProv[h.prov] || []).push(h); });
@@ -604,18 +614,40 @@
     var area = DATA.provArea[prov];
     var hs = hospByProv[key] || [];
     var head = prov === "Ciudad de Buenos Aires" ? "Ciudad Autónoma de Buenos Aires" : prov;
+    var otras = DATA.otras[key] || [];
+    var np = hs.reduce(function(s, h){ return s + h.usuarios.length; }, 0) +
+             otras.reduce(function(s, o){ return s + o.usuarios.length; }, 0);
     var html = '<div class="tt-head tt-h' + area + '"><b>' + head + "</b>" +
                "<span>Área " + area + " — " + DATA.areaNames[area] +
-               (isMalv ? "" : " · " + hs.length + (hs.length === 1 ? " hospital" : " hospitales")) +
+               (isMalv ? "" : " · " + hs.length + (hs.length === 1 ? " hospital" : " hospitales") +
+                 (np ? " · " + np + (np === 1 ? " profesional" : " profesionales") : "")) +
                "</span></div>";
     html += '<div class="tt-body">';
     if(isMalv){
       html += '<p class="tt-note">Parte de la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur.</p>';
     } else {
-      html += "<ol>" + hs.map(function(h){
-        return '<li value="' + h.n + '">' + h.nombre +
-               '<span class="tt-city">' + h.ciudad + "</span></li>";
-      }).join("") + "</ol>";
+      html += '<p class="tt-sec">Hospitales del estudio</p>';
+      hs.forEach(function(h){
+        html += '<p class="tt-inst"><b>' + h.nombre + "</b>";
+        if(h.usuarios.length){
+          h.usuarios.forEach(function(u){
+            html += '<span class="tt-u">' + u.nombre + " · <i>" + u.prof + "</i></span>";
+          });
+        } else {
+          html += '<span class="tt-none">Sin usuarios registrados</span>';
+        }
+        html += "</p>";
+      });
+      if(otras.length){
+        html += '<hr class="tt-div"><p class="tt-sec">Otras instituciones declaradas</p>';
+        otras.forEach(function(o){
+          html += '<p class="tt-inst"><b>' + o.inst + "</b>";
+          o.usuarios.forEach(function(u){
+            html += '<span class="tt-u">' + u.nombre + (u.prof ? " · <i>" + u.prof + "</i>" : "") + "</span>";
+          });
+          html += "</p>";
+        });
+      }
     }
     html += "</div>";
     tt.innerHTML = html;
