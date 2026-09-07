@@ -96,6 +96,46 @@
     border-left:2px solid var(--hairline); padding-left:.9rem;
   }
   section.listado{margin-top:3.2rem}
+  .seccion-nota{max-width:72ch; color:var(--ink-2); font-size:.88rem; margin:0 0 1.6rem}
+  .ficha-area{margin-bottom:2.2rem}
+  .ficha-area-h{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:1.05rem;
+    margin:0 0 .8rem; display:flex; align-items:center; gap:.6rem;
+  }
+  .fichas-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:.8rem}
+  .ficha{
+    background:var(--surface); border:1px solid var(--border); border-radius:8px;
+    padding:.85rem 1rem 1rem; display:flex; flex-direction:column; gap:.35rem;
+  }
+  .ficha-top{display:flex; align-items:center; gap:.6rem}
+  .ficha-num{color:var(--muted); font-size:.78rem; font-variant-numeric:tabular-nums}
+  .ficha-prov{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:.68rem;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .ficha-badge{
+    margin-left:auto; border-radius:99px; padding:.12rem .6rem; font-size:.72rem; font-weight:600;
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+  }
+  .ficha-badge.sin{color:var(--muted); border:1px solid var(--hairline); background:none}
+  .ficha-badge.con.a1bg{color:var(--tt-ink1)} .ficha-badge.con.a2bg{color:var(--tt-ink2)}
+  .ficha-badge.con.a3bg{color:var(--tt-ink3)} .ficha-badge.con.a4bg{color:var(--tt-ink4)}
+  .ficha-badge.con.a5bg{color:var(--tt-ink5)}
+  .ficha h4{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:.95rem;
+    margin:0; line-height:1.3; text-wrap:balance;
+  }
+  .ficha-meta{margin:0; color:var(--muted); font-size:.78rem}
+  .ficha-users{
+    list-style:none; margin:.45rem 0 0; padding:.65rem 0 0; border-top:1px solid var(--hairline);
+    display:flex; flex-direction:column; gap:.55rem;
+  }
+  .ficha-users b{display:block; font-weight:600; font-size:.85rem}
+  .ficha-users span{display:block; color:var(--ink-2); font-size:.76rem}
+  .ficha-users a, section.fuera td a{
+    color:var(--ink-2); font-size:.76rem; text-decoration:underline;
+    text-underline-offset:2px; word-break:break-all;
+  }
   h2{
     font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:1.35rem;
     margin:0 0 1rem; text-wrap:balance;
@@ -158,6 +198,7 @@
       <div class="stat"><b>5</b><span>áreas</span></div>
       <div class="stat"><b>24</b><span>jurisdicciones</span></div>
       <div class="stat"><b>7,2</b><span>promedio por área</span></div>
+      <div class="stat"><b>33</b><span>usuarios registrados</span></div>
     </div>
   </header>
 
@@ -254,62 +295,287 @@
   </div>
 
   <section class="listado">
-    <h2>Listado por área</h2>
+    <h2>Fichas de hospitales</h2>
+    <p class="seccion-nota">De los 33 usuarios registrados, 16 declararon como institución
+    uno de los 36 hospitales del universo y figuran en su ficha. Los 17 restantes declararon otras
+    instituciones y se listan en el apartado final. Un usuario se asocia a un hospital solo cuando la institución
+    declarada corresponde a ese hospital, nunca por provincia o ciudad.</p>
+    <div class="ficha-area">
+        <h3 class="ficha-area-h"><span class="chip a1bg"></span>Área 1 — Metropolitana
+          <span class="area-n">8 hospitales · 7 usuarios</span></h3>
+        <div class="fichas-grid">
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">1</span><span class="ficha-prov">CABA</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”</h4>
+          <p class="ficha-meta">CABA · Pediátrico</p>
+          
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">2</span><span class="ficha-prov">CABA</span><span class="ficha-badge a1bg con">1 usuario</span></div>
+          <h4>Hospital General de Niños “Dr. Ricardo Gutiérrez”</h4>
+          <p class="ficha-meta">CABA · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Silvina Carranza</b><span>Kinesióloga</span><a href="mailto:silvicarran@gmail.com">silvicarran@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">3</span><span class="ficha-prov">CABA</span><span class="ficha-badge a1bg con">3 usuarios</span></div>
+          <h4>Hospital General de Niños “Pedro de Elizalde”</h4>
+          <p class="ficha-meta">CABA · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Sofía Fernández Sohar</b><span>Kinesióloga</span><a href="mailto:sofiasohar91@gmail.com">sofiasohar91@gmail.com</a></li><li><b>Yamila Betiana Nociti</b><span>Kinesióloga</span><a href="mailto:nocitiyamila@gmail.com">nocitiyamila@gmail.com</a></li><li><b>María Valentina Luna</b><span>Kinesióloga</span><a href="mailto:mvalentinaluna@gmail.com">mvalentinaluna@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">4</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge a1bg con">2 usuarios</span></div>
+          <h4>Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”</h4>
+          <p class="ficha-meta">La Plata · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Ana Rosa Fernández</b><span>Kinesióloga</span><a href="mailto:ranafernandez2012@gmail.com">ranafernandez2012@gmail.com</a></li><li><b>Patricio Brenta</b><span>Kinesiólogo</span><a href="mailto:lic.brentapatricio@gmail.com">lic.brentapatricio@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">5</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital del Niño “Prof. Dr. Ramón Exeni”</h4>
+          <p class="ficha-meta">San Justo, La Matanza · Pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">6</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”</h4>
+          <p class="ficha-meta">Mar del Plata · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">7</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”</h4>
+          <p class="ficha-meta">San Isidro · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">8</span><span class="ficha-prov">Buenos Aires</span><span class="ficha-badge a1bg con">1 usuario</span></div>
+          <h4>Hospital Nacional Profesor Alejandro Posadas</h4>
+          <p class="ficha-meta">El Palomar, Morón · General de alta complejidad · referente pediátrico</p>
+          <ul class="ficha-users"><li><b>Adriana Arce</b><span>Kinesióloga</span><a href="mailto:arceadrianakinesiologia@gmail.com">arceadrianakinesiologia@gmail.com</a></li></ul>
+        </article>
+        </div>
+      </div>
+      <div class="ficha-area">
+        <h3 class="ficha-area-h"><span class="chip a2bg"></span>Área 2 — NEA · Litoral
+          <span class="area-n">7 hospitales · 2 usuarios</span></h3>
+        <div class="fichas-grid">
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">10</span><span class="ficha-prov">Chaco</span><span class="ficha-badge a2bg con">1 usuario</span></div>
+          <h4>Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”</h4>
+          <p class="ficha-meta">Resistencia · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Marcela Patricia Iglesias</b><span>Kinesióloga</span><a href="mailto:kinepato260868@gmail.com">kinepato260868@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">16</span><span class="ficha-prov">Corrientes</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Pediátrico “Juan Pablo II”</h4>
+          <p class="ficha-meta">Corrientes · Pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">17</span><span class="ficha-prov">Entre Ríos</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Materno Infantil San Roque</h4>
+          <p class="ficha-meta">Paraná · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">18</span><span class="ficha-prov">Formosa</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital de la Madre y el Niño</h4>
+          <p class="ficha-meta">Formosa · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">23</span><span class="ficha-prov">Misiones</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital de Pediatría “Dr. Fernando Barreyro”</h4>
+          <p class="ficha-meta">Posadas · Pediátrico</p>
+          
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">31</span><span class="ficha-prov">Santa Fe</span><span class="ficha-badge a2bg con">1 usuario</span></div>
+          <h4>Hospital de Niños “Dr. Orlando Alassia”</h4>
+          <p class="ficha-meta">Santa Fe · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Yael Juncos</b><span>Kinesióloga</span><a href="mailto:yaeljuncos@gmail.com">yaeljuncos@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">32</span><span class="ficha-prov">Santa Fe</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital de Niños “Víctor J. Vilela”</h4>
+          <p class="ficha-meta">Rosario · Pediátrico</p>
+          
+        </article>
+        </div>
+      </div>
+      <div class="ficha-area">
+        <h3 class="ficha-area-h"><span class="chip a3bg"></span>Área 3 — NOA
+          <span class="area-n">6 hospitales · 0 usuarios</span></h3>
+        <div class="fichas-grid">
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">9</span><span class="ficha-prov">Catamarca</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Interzonal de Niños “Eva Perón”</h4>
+          <p class="ficha-meta">San Fernando del Valle de Catamarca · Pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">19</span><span class="ficha-prov">Jujuy</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Materno Infantil “Dr. Héctor Quintana”</h4>
+          <p class="ficha-meta">San Salvador de Jujuy · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">21</span><span class="ficha-prov">La Rioja</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital de la Madre y el Niño “Inmaculada Concepción de María”</h4>
+          <p class="ficha-meta">La Rioja · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">27</span><span class="ficha-prov">Salta</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Público Materno Infantil</h4>
+          <p class="ficha-meta">Salta · Materno-infantil</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">33</span><span class="ficha-prov">Santiago del Estero</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Centro Provincial de Salud Infantil “Eva Perón” (CePSI)</h4>
+          <p class="ficha-meta">Santiago del Estero · Pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">36</span><span class="ficha-prov">Tucumán</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital del Niño Jesús</h4>
+          <p class="ficha-meta">San Miguel de Tucumán · Pediátrico</p>
+          
+        </article>
+        </div>
+      </div>
+      <div class="ficha-area">
+        <h3 class="ficha-area-h"><span class="chip a4bg"></span>Área 4 — Centro · Cuyo
+          <span class="area-n">7 hospitales · 7 usuarios</span></h3>
+        <div class="fichas-grid">
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">13</span><span class="ficha-prov">Córdoba</span><span class="ficha-badge a4bg con">4 usuarios</span></div>
+          <h4>Hospital de Niños de la Santísima Trinidad</h4>
+          <p class="ficha-meta">Córdoba · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Rossi Catriel</b><span>Kinesiólogo</span><a href="mailto:rossicatriel@gmail.com">rossicatriel@gmail.com</a></li><li><b>Prado Jesica</b><span>Kinesióloga</span><a href="mailto:jesikine@gmail.com">jesikine@gmail.com</a></li><li><b>Aldana Núñez</b><span>Kinesióloga</span><a href="mailto:licaldananunez@gmail.com">licaldananunez@gmail.com</a></li><li><b>Valeria Festa</b><span>Kinesióloga</span><a href="mailto:valefesta1988@gmail.com">valefesta1988@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">14</span><span class="ficha-prov">Córdoba</span><span class="ficha-badge a4bg con">1 usuario</span></div>
+          <h4>Hospital Pediátrico del Niño Jesús</h4>
+          <p class="ficha-meta">Córdoba · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Mirtha Raiden</b><span>Neumonóloga Pediatra</span><a href="mailto:mraidens@gmail.com">mraidens@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">15</span><span class="ficha-prov">Córdoba</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Infantil Municipal</h4>
+          <p class="ficha-meta">Córdoba · Pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">20</span><span class="ficha-prov">La Pampa</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital “Dr. Lucio Molas”</h4>
+          <p class="ficha-meta">Santa Rosa · General · referente pediátrico provincial</p>
+          
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">22</span><span class="ficha-prov">Mendoza</span><span class="ficha-badge a4bg con">1 usuario</span></div>
+          <h4>Hospital Pediátrico “Dr. Humberto J. Notti”</h4>
+          <p class="ficha-meta">Guaymallén · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Carolina Molina</b><span>Kinesióloga</span><a href="mailto:lic.carolinamolina0412@gmail.com">lic.carolinamolina0412@gmail.com</a></li></ul>
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">28</span><span class="ficha-prov">San Juan</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital “Dr. Guillermo Rawson”</h4>
+          <p class="ficha-meta">San Juan · General · referente pediátrico provincial</p>
+          
+        </article>
+        <article class="ficha con-usuarios">
+          <div class="ficha-top"><span class="ficha-num">29</span><span class="ficha-prov">San Luis</span><span class="ficha-badge a4bg con">1 usuario</span></div>
+          <h4>Hospital Pediátrico San Luis</h4>
+          <p class="ficha-meta">San Luis · Pediátrico</p>
+          <ul class="ficha-users"><li><b>Jorge Walter Argañaraz</b><span>Lic. en Enfermería</span><a href="mailto:jorgewalterarganaraz79@gmail.com">jorgewalterarganaraz79@gmail.com</a></li></ul>
+        </article>
+        </div>
+      </div>
+      <div class="ficha-area">
+        <h3 class="ficha-area-h"><span class="chip a5bg"></span>Área 5 — Patagonia
+          <span class="area-n">8 hospitales · 0 usuarios</span></h3>
+        <div class="fichas-grid">
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">11</span><span class="ficha-prov">Chubut</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Zonal de Trelew “Dr. Adolfo Margara”</h4>
+          <p class="ficha-meta">Trelew · General · referente pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">12</span><span class="ficha-prov">Chubut</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Regional de Comodoro Rivadavia</h4>
+          <p class="ficha-meta">Comodoro Rivadavia · General · referente pediátrico del sur provincial</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">24</span><span class="ficha-prov">Neuquén</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”</h4>
+          <p class="ficha-meta">Neuquén · General de alta complejidad · referente pediátrico y UTIP de Patagonia norte</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">25</span><span class="ficha-prov">Río Negro</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Zonal Bariloche “Dr. Ramón Carrillo”</h4>
+          <p class="ficha-meta">San Carlos de Bariloche · General · referente pediátrico zonal</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">26</span><span class="ficha-prov">Río Negro</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital “Artémides Zatti”</h4>
+          <p class="ficha-meta">Viedma · General · cabecera Zona Sanitaria III</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">30</span><span class="ficha-prov">Santa Cruz</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Regional “Dr. José Formenti”</h4>
+          <p class="ficha-meta">Río Gallegos · General · referente pediátrico provincial</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">34</span><span class="ficha-prov">Tierra del Fuego</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”</h4>
+          <p class="ficha-meta">Ushuaia · General · referente pediátrico</p>
+          
+        </article>
+        <article class="ficha">
+          <div class="ficha-top"><span class="ficha-num">35</span><span class="ficha-prov">Tierra del Fuego</span><span class="ficha-badge sin">Sin usuarios</span></div>
+          <h4>Hospital Regional Río Grande “Nuestra Señora de la Candelaria”</h4>
+          <p class="ficha-meta">Río Grande · General · referente pediátrico</p>
+          
+        </article>
+        </div>
+      </div>
+  </section>
+
+  <section class="listado fuera">
+    <h2>Registros fuera del universo hospitalario</h2>
+    <p class="seccion-nota">Usuarios cuya institución declarada no corresponde a ninguno de los 36 hospitales
+    del estudio. No se asocian a ninguna ficha. Darío Villalba figuraba dos veces con el mismo email y se
+    cuenta como un solo usuario.</p>
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>N.º</th><th>Hospital</th><th>Localidad</th><th>Provincia</th><th>Perfil</th></tr>
+          <tr><th>Nombre</th><th>Profesión</th><th>Institución declarada</th><th>Provincia</th><th>Email</th></tr>
         </thead>
-        <tbody class="grupo">
-          <tr class="area-row"><th colspan="5"><span class="chip a1bg"></span>Área 1 — Metropolitana <span class="area-n">8 hospitales</span></th></tr>
-          <tr><td class="num">1</td><td>Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”</td><td>CABA</td><td>CABA</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">2</td><td>Hospital General de Niños “Dr. Ricardo Gutiérrez”</td><td>CABA</td><td>CABA</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">3</td><td>Hospital General de Niños “Pedro de Elizalde”</td><td>CABA</td><td>CABA</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">4</td><td>Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”</td><td>La Plata</td><td>Buenos Aires</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">5</td><td>Hospital del Niño “Prof. Dr. Ramón Exeni”</td><td>San Justo, La Matanza</td><td>Buenos Aires</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">6</td><td>Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”</td><td>Mar del Plata</td><td>Buenos Aires</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">7</td><td>Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”</td><td>San Isidro</td><td>Buenos Aires</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">8</td><td>Hospital Nacional Profesor Alejandro Posadas</td><td>El Palomar, Morón</td><td>Buenos Aires</td><td class="tipo">General de alta complejidad · referente pediátrico</td></tr>
-        </tbody>
-        <tbody class="grupo">
-          <tr class="area-row"><th colspan="5"><span class="chip a2bg"></span>Área 2 — NEA · Litoral <span class="area-n">7 hospitales</span></th></tr>
-          <tr><td class="num">10</td><td>Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”</td><td>Resistencia</td><td>Chaco</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">16</td><td>Hospital Pediátrico “Juan Pablo II”</td><td>Corrientes</td><td>Corrientes</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">17</td><td>Hospital Materno Infantil San Roque</td><td>Paraná</td><td>Entre Ríos</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">18</td><td>Hospital de la Madre y el Niño</td><td>Formosa</td><td>Formosa</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">23</td><td>Hospital de Pediatría “Dr. Fernando Barreyro”</td><td>Posadas</td><td>Misiones</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">31</td><td>Hospital de Niños “Dr. Orlando Alassia”</td><td>Santa Fe</td><td>Santa Fe</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">32</td><td>Hospital de Niños “Víctor J. Vilela”</td><td>Rosario</td><td>Santa Fe</td><td class="tipo">Pediátrico</td></tr>
-        </tbody>
-        <tbody class="grupo">
-          <tr class="area-row"><th colspan="5"><span class="chip a3bg"></span>Área 3 — NOA <span class="area-n">6 hospitales</span></th></tr>
-          <tr><td class="num">9</td><td>Hospital Interzonal de Niños “Eva Perón”</td><td>San Fernando del Valle de Catamarca</td><td>Catamarca</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">19</td><td>Hospital Materno Infantil “Dr. Héctor Quintana”</td><td>San Salvador de Jujuy</td><td>Jujuy</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">21</td><td>Hospital de la Madre y el Niño “Inmaculada Concepción de María”</td><td>La Rioja</td><td>La Rioja</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">27</td><td>Hospital Público Materno Infantil</td><td>Salta</td><td>Salta</td><td class="tipo">Materno-infantil</td></tr>
-          <tr><td class="num">33</td><td>Centro Provincial de Salud Infantil “Eva Perón” (CePSI)</td><td>Santiago del Estero</td><td>Santiago del Estero</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">36</td><td>Hospital del Niño Jesús</td><td>San Miguel de Tucumán</td><td>Tucumán</td><td class="tipo">Pediátrico</td></tr>
-        </tbody>
-        <tbody class="grupo">
-          <tr class="area-row"><th colspan="5"><span class="chip a4bg"></span>Área 4 — Centro · Cuyo <span class="area-n">7 hospitales</span></th></tr>
-          <tr><td class="num">13</td><td>Hospital de Niños de la Santísima Trinidad</td><td>Córdoba</td><td>Córdoba</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">14</td><td>Hospital Pediátrico del Niño Jesús</td><td>Córdoba</td><td>Córdoba</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">15</td><td>Hospital Infantil Municipal</td><td>Córdoba</td><td>Córdoba</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">20</td><td>Hospital “Dr. Lucio Molas”</td><td>Santa Rosa</td><td>La Pampa</td><td class="tipo">General · referente pediátrico provincial</td></tr>
-          <tr><td class="num">22</td><td>Hospital Pediátrico “Dr. Humberto J. Notti”</td><td>Guaymallén</td><td>Mendoza</td><td class="tipo">Pediátrico</td></tr>
-          <tr><td class="num">28</td><td>Hospital “Dr. Guillermo Rawson”</td><td>San Juan</td><td>San Juan</td><td class="tipo">General · referente pediátrico provincial</td></tr>
-          <tr><td class="num">29</td><td>Hospital Pediátrico San Luis</td><td>San Luis</td><td>San Luis</td><td class="tipo">Pediátrico</td></tr>
-        </tbody>
-        <tbody class="grupo">
-          <tr class="area-row"><th colspan="5"><span class="chip a5bg"></span>Área 5 — Patagonia <span class="area-n">8 hospitales</span></th></tr>
-          <tr><td class="num">11</td><td>Hospital Zonal de Trelew “Dr. Adolfo Margara”</td><td>Trelew</td><td>Chubut</td><td class="tipo">General · referente pediátrico</td></tr>
-          <tr><td class="num">12</td><td>Hospital Regional de Comodoro Rivadavia</td><td>Comodoro Rivadavia</td><td>Chubut</td><td class="tipo">General · referente pediátrico del sur provincial</td></tr>
-          <tr><td class="num">24</td><td>Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”</td><td>Neuquén</td><td>Neuquén</td><td class="tipo">General de alta complejidad · referente pediátrico y UTIP de Patagonia norte</td></tr>
-          <tr><td class="num">25</td><td>Hospital Zonal Bariloche “Dr. Ramón Carrillo”</td><td>San Carlos de Bariloche</td><td>Río Negro</td><td class="tipo">General · referente pediátrico zonal</td></tr>
-          <tr><td class="num">26</td><td>Hospital “Artémides Zatti”</td><td>Viedma</td><td>Río Negro</td><td class="tipo">General · cabecera Zona Sanitaria III</td></tr>
-          <tr><td class="num">30</td><td>Hospital Regional “Dr. José Formenti”</td><td>Río Gallegos</td><td>Santa Cruz</td><td class="tipo">General · referente pediátrico provincial</td></tr>
-          <tr><td class="num">34</td><td>Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”</td><td>Ushuaia</td><td>Tierra del Fuego</td><td class="tipo">General · referente pediátrico</td></tr>
-          <tr><td class="num">35</td><td>Hospital Regional Río Grande “Nuestra Señora de la Candelaria”</td><td>Río Grande</td><td>Tierra del Fuego</td><td class="tipo">General · referente pediátrico</td></tr>
+        <tbody>
+          <tr><td>Cecilia Mazzuz</td><td>Kinesióloga</td><td>Sanatorio Sagrado Corazón</td><td>CABA</td><td><a href="mailto:cmazzuz3@gmail.com">cmazzuz3@gmail.com</a></td></tr>
+          <tr><td>Alfredo Kamegawa</td><td>Kinesiólogo</td><td>Clínica Suizo Argentina / Sanatorio de los Arcos / Sanatorio Finochietto</td><td>CABA</td><td><a href="mailto:alfredokamegawa@gmail.com">alfredokamegawa@gmail.com</a></td></tr>
+          <tr><td>Marcos Sebastián Villafañe Daona</td><td>Kinesiólogo</td><td>Instituto de Maternidad Nuestra Señora de las Mercedes</td><td>Tucumán</td><td><a href="mailto:mvillafanedaona@gmail.com">mvillafanedaona@gmail.com</a></td></tr>
+          <tr><td>Dario Villalba</td><td>Kinesiólogo</td><td>Hospital Municipal de Chivilcoy</td><td>Buenos Aires</td><td><a href="mailto:dariovillalba79@gmail.com">dariovillalba79@gmail.com</a></td></tr>
+          <tr><td>Guillermo Tellechea</td><td>Kinesiólogo</td><td>Internación domiciliaria</td><td>Buenos Aires</td><td><a href="mailto:gttellgui1@gmail.com">gttellgui1@gmail.com</a></td></tr>
+          <tr><td>Enrique Javier Manrique Soto</td><td>Kinesiólogo</td><td>Neoclínica</td><td>Córdoba</td><td><a href="mailto:javiermanriquesoto@gmail.com">javiermanriquesoto@gmail.com</a></td></tr>
+          <tr><td>Cecilia Giongo</td><td>Kinesióloga</td><td>HIGA Eva Perón — San Martín</td><td>Buenos Aires</td><td><a href="mailto:ceciliagiongo@gmail.com">ceciliagiongo@gmail.com</a></td></tr>
+          <tr><td>Gianina Mariana Ferro</td><td>Kinesióloga</td><td>Clínica Integral de Disfagia</td><td>Mendoza</td><td><a href="mailto:lic.ferrogianina@gmail.com">lic.ferrogianina@gmail.com</a></td></tr>
+          <tr><td>Daniela Coria</td><td>Kinesióloga</td><td>Hospital Dr. Marcial Quiroga / Sanatorio Argentino</td><td>San Juan</td><td><a href="mailto:daniela.a.coria@gmail.com">daniela.a.coria@gmail.com</a></td></tr>
+          <tr><td>Brenda Barroso</td><td>Kinesióloga</td><td>Sanatorio de la Trinidad Ramos Mejía</td><td>Buenos Aires</td><td><a href="mailto:bren.barroso@gmail.com">bren.barroso@gmail.com</a></td></tr>
+          <tr><td>Mariana Vogel</td><td>Kinesióloga</td><td>Hospital Nivel 3 SAMIC Eldorado</td><td>Misiones</td><td><a href="mailto:marianasvogel@gmail.com">marianasvogel@gmail.com</a></td></tr>
+          <tr><td>Maximiliano Ayraudo</td><td>Kinesiólogo</td><td>Santa Catalina Clínica de Neurorehabilitación — sede Remeo</td><td>Buenos Aires</td><td><a href="mailto:maxiayraudo@gmail.com">maxiayraudo@gmail.com</a></td></tr>
+          <tr><td>Gimena Herrera</td><td>Kinesióloga</td><td>IPRO</td><td>Mendoza</td><td><a href="mailto:gimenitaherrera07@gmail.com">gimenitaherrera07@gmail.com</a></td></tr>
+          <tr><td>Carla Denicola</td><td>Licenciada en Terapia Física</td><td>Fleni Escobar</td><td>Buenos Aires</td><td><a href="mailto:car610.cd@gmail.com">car610.cd@gmail.com</a></td></tr>
+          <tr><td>Claudia Vanesa Rojas</td><td>Kinesióloga</td><td>HIGA P. V. Cordero</td><td>Buenos Aires</td><td><a href="mailto:vanerojas64@gmail.com">vanerojas64@gmail.com</a></td></tr>
+          <tr><td>Andrea Carolina Atencio</td><td>—</td><td>Domicilios particulares</td><td>Mendoza</td><td>—</td></tr>
+          <tr><td>Luciana Fonseca</td><td>—</td><td>Hospital de Clínicas Presidente Dr. Nicolás Avellaneda</td><td>Tucumán</td><td>—</td></tr>
         </tbody>
       </table>
     </div>

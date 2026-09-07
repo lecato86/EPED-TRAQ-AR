@@ -1,6 +1,7 @@
 {
   "actualizado": "2026-09-07",
   "total": 36,
+  "usuariosAsociados": 16,
   "areas": [
     {
       "area": 1,
@@ -69,7 +70,8 @@
       "ciudad": "CABA",
       "prov": "Ciudad de Buenos Aires",
       "tipo": "Pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": []
     },
     {
       "n": 2,
@@ -77,7 +79,14 @@
       "ciudad": "CABA",
       "prov": "Ciudad de Buenos Aires",
       "tipo": "Pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": [
+        {
+          "nombre": "Silvina Carranza",
+          "profesion": "Kinesióloga",
+          "email": "silvicarran@gmail.com"
+        }
+      ]
     },
     {
       "n": 3,
@@ -85,7 +94,24 @@
       "ciudad": "CABA",
       "prov": "Ciudad de Buenos Aires",
       "tipo": "Pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": [
+        {
+          "nombre": "Sofía Fernández Sohar",
+          "profesion": "Kinesióloga",
+          "email": "sofiasohar91@gmail.com"
+        },
+        {
+          "nombre": "Yamila Betiana Nociti",
+          "profesion": "Kinesióloga",
+          "email": "nocitiyamila@gmail.com"
+        },
+        {
+          "nombre": "María Valentina Luna",
+          "profesion": "Kinesióloga",
+          "email": "mvalentinaluna@gmail.com"
+        }
+      ]
     },
     {
       "n": 4,
@@ -93,7 +119,19 @@
       "ciudad": "La Plata",
       "prov": "Buenos Aires",
       "tipo": "Pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": [
+        {
+          "nombre": "Ana Rosa Fernández",
+          "profesion": "Kinesióloga",
+          "email": "ranafernandez2012@gmail.com"
+        },
+        {
+          "nombre": "Patricio Brenta",
+          "profesion": "Kinesiólogo",
+          "email": "lic.brentapatricio@gmail.com"
+        }
+      ]
     },
     {
       "n": 5,
@@ -101,7 +139,8 @@
       "ciudad": "San Justo, La Matanza",
       "prov": "Buenos Aires",
       "tipo": "Pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": []
     },
     {
       "n": 6,
@@ -109,7 +148,8 @@
       "ciudad": "Mar del Plata",
       "prov": "Buenos Aires",
       "tipo": "Materno-infantil",
-      "area": 1
+      "area": 1,
+      "usuarios": []
     },
     {
       "n": 7,
@@ -117,7 +157,8 @@
       "ciudad": "San Isidro",
       "prov": "Buenos Aires",
       "tipo": "Materno-infantil",
-      "area": 1
+      "area": 1,
+      "usuarios": []
     },
     {
       "n": 8,
@@ -125,7 +166,14 @@
       "ciudad": "El Palomar, Morón",
       "prov": "Buenos Aires",
       "tipo": "General de alta complejidad · referente pediátrico",
-      "area": 1
+      "area": 1,
+      "usuarios": [
+        {
+          "nombre": "Adriana Arce",
+          "profesion": "Kinesióloga",
+          "email": "arceadrianakinesiologia@gmail.com"
+        }
+      ]
     },
     {
       "n": 9,
@@ -133,7 +181,8 @@
       "ciudad": "San Fernando del Valle de Catamarca",
       "prov": "Catamarca",
       "tipo": "Pediátrico",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     },
     {
       "n": 10,
@@ -141,7 +190,14 @@
       "ciudad": "Resistencia",
       "prov": "Chaco",
       "tipo": "Pediátrico",
-      "area": 2
+      "area": 2,
+      "usuarios": [
+        {
+          "nombre": "Marcela Patricia Iglesias",
+          "profesion": "Kinesióloga",
+          "email": "kinepato260868@gmail.com"
+        }
+      ]
     },
     {
       "n": 11,
@@ -149,7 +205,8 @@
       "ciudad": "Trelew",
       "prov": "Chubut",
       "tipo": "General · referente pediátrico",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 12,
@@ -157,7 +214,8 @@
       "ciudad": "Comodoro Rivadavia",
       "prov": "Chubut",
       "tipo": "General · referente pediátrico del sur provincial",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 13,
@@ -165,7 +223,29 @@
       "ciudad": "Córdoba",
       "prov": "Córdoba",
       "tipo": "Pediátrico",
-      "area": 4
+      "area": 4,
+      "usuarios": [
+        {
+          "nombre": "Rossi Catriel",
+          "profesion": "Kinesiólogo",
+          "email": "rossicatriel@gmail.com"
+        },
+        {
+          "nombre": "Prado Jesica",
+          "profesion": "Kinesióloga",
+          "email": "jesikine@gmail.com"
+        },
+        {
+          "nombre": "Aldana Núñez",
+          "profesion": "Kinesióloga",
+          "email": "licaldananunez@gmail.com"
+        },
+        {
+          "nombre": "Valeria Festa",
+          "profesion": "Kinesióloga",
+          "email": "valefesta1988@gmail.com"
+        }
+      ]
     },
     {
       "n": 14,
@@ -173,7 +253,14 @@
       "ciudad": "Córdoba",
       "prov": "Córdoba",
       "tipo": "Pediátrico",
-      "area": 4
+      "area": 4,
+      "usuarios": [
+        {
+          "nombre": "Mirtha Raiden",
+          "profesion": "Neumonóloga Pediatra",
+          "email": "mraidens@gmail.com"
+        }
+      ]
     },
     {
       "n": 15,
@@ -181,7 +268,8 @@
       "ciudad": "Córdoba",
       "prov": "Córdoba",
       "tipo": "Pediátrico",
-      "area": 4
+      "area": 4,
+      "usuarios": []
     },
     {
       "n": 16,
@@ -189,7 +277,8 @@
       "ciudad": "Corrientes",
       "prov": "Corrientes",
       "tipo": "Pediátrico",
-      "area": 2
+      "area": 2,
+      "usuarios": []
     },
     {
       "n": 17,
@@ -197,7 +286,8 @@
       "ciudad": "Paraná",
       "prov": "Entre Ríos",
       "tipo": "Materno-infantil",
-      "area": 2
+      "area": 2,
+      "usuarios": []
     },
     {
       "n": 18,
@@ -205,7 +295,8 @@
       "ciudad": "Formosa",
       "prov": "Formosa",
       "tipo": "Materno-infantil",
-      "area": 2
+      "area": 2,
+      "usuarios": []
     },
     {
       "n": 19,
@@ -213,7 +304,8 @@
       "ciudad": "San Salvador de Jujuy",
       "prov": "Jujuy",
       "tipo": "Materno-infantil",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     },
     {
       "n": 20,
@@ -221,7 +313,8 @@
       "ciudad": "Santa Rosa",
       "prov": "La Pampa",
       "tipo": "General · referente pediátrico provincial",
-      "area": 4
+      "area": 4,
+      "usuarios": []
     },
     {
       "n": 21,
@@ -229,7 +322,8 @@
       "ciudad": "La Rioja",
       "prov": "La Rioja",
       "tipo": "Materno-infantil",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     },
     {
       "n": 22,
@@ -237,7 +331,14 @@
       "ciudad": "Guaymallén",
       "prov": "Mendoza",
       "tipo": "Pediátrico",
-      "area": 4
+      "area": 4,
+      "usuarios": [
+        {
+          "nombre": "Carolina Molina",
+          "profesion": "Kinesióloga",
+          "email": "lic.carolinamolina0412@gmail.com"
+        }
+      ]
     },
     {
       "n": 23,
@@ -245,7 +346,8 @@
       "ciudad": "Posadas",
       "prov": "Misiones",
       "tipo": "Pediátrico",
-      "area": 2
+      "area": 2,
+      "usuarios": []
     },
     {
       "n": 24,
@@ -253,7 +355,8 @@
       "ciudad": "Neuquén",
       "prov": "Neuquén",
       "tipo": "General de alta complejidad · referente pediátrico y UTIP de Patagonia norte",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 25,
@@ -261,7 +364,8 @@
       "ciudad": "San Carlos de Bariloche",
       "prov": "Río Negro",
       "tipo": "General · referente pediátrico zonal",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 26,
@@ -269,7 +373,8 @@
       "ciudad": "Viedma",
       "prov": "Río Negro",
       "tipo": "General · cabecera Zona Sanitaria III",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 27,
@@ -277,7 +382,8 @@
       "ciudad": "Salta",
       "prov": "Salta",
       "tipo": "Materno-infantil",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     },
     {
       "n": 28,
@@ -285,7 +391,8 @@
       "ciudad": "San Juan",
       "prov": "San Juan",
       "tipo": "General · referente pediátrico provincial",
-      "area": 4
+      "area": 4,
+      "usuarios": []
     },
     {
       "n": 29,
@@ -293,7 +400,14 @@
       "ciudad": "San Luis",
       "prov": "San Luis",
       "tipo": "Pediátrico",
-      "area": 4
+      "area": 4,
+      "usuarios": [
+        {
+          "nombre": "Jorge Walter Argañaraz",
+          "profesion": "Lic. en Enfermería",
+          "email": "jorgewalterarganaraz79@gmail.com"
+        }
+      ]
     },
     {
       "n": 30,
@@ -301,7 +415,8 @@
       "ciudad": "Río Gallegos",
       "prov": "Santa Cruz",
       "tipo": "General · referente pediátrico provincial",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 31,
@@ -309,7 +424,14 @@
       "ciudad": "Santa Fe",
       "prov": "Santa Fe",
       "tipo": "Pediátrico",
-      "area": 2
+      "area": 2,
+      "usuarios": [
+        {
+          "nombre": "Yael Juncos",
+          "profesion": "Kinesióloga",
+          "email": "yaeljuncos@gmail.com"
+        }
+      ]
     },
     {
       "n": 32,
@@ -317,7 +439,8 @@
       "ciudad": "Rosario",
       "prov": "Santa Fe",
       "tipo": "Pediátrico",
-      "area": 2
+      "area": 2,
+      "usuarios": []
     },
     {
       "n": 33,
@@ -325,7 +448,8 @@
       "ciudad": "Santiago del Estero",
       "prov": "Santiago del Estero",
       "tipo": "Pediátrico",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     },
     {
       "n": 34,
@@ -333,7 +457,8 @@
       "ciudad": "Ushuaia",
       "prov": "Tierra del Fuego",
       "tipo": "General · referente pediátrico",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 35,
@@ -341,7 +466,8 @@
       "ciudad": "Río Grande",
       "prov": "Tierra del Fuego",
       "tipo": "General · referente pediátrico",
-      "area": 5
+      "area": 5,
+      "usuarios": []
     },
     {
       "n": 36,
@@ -349,7 +475,8 @@
       "ciudad": "San Miguel de Tucumán",
       "prov": "Tucumán",
       "tipo": "Pediátrico",
-      "area": 3
+      "area": 3,
+      "usuarios": []
     }
   ]
 }

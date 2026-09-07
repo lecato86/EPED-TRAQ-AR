@@ -1,0 +1,127 @@
+{
+  "actualizado": "2026-09-07",
+  "criterio": "Usuarios cuya institución declarada no corresponde a ninguno de los 36 hospitales del universo. No se asocian a fichas.",
+  "total": 17,
+  "usuarios": [
+    {
+      "nombre": "Cecilia Mazzuz",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "Sanatorio Sagrado Corazón",
+      "provincia": "CABA",
+      "email": "cmazzuz3@gmail.com"
+    },
+    {
+      "nombre": "Alfredo Kamegawa",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Clínica Suizo Argentina / Sanatorio de los Arcos / Sanatorio Finochietto",
+      "provincia": "CABA",
+      "email": "alfredokamegawa@gmail.com"
+    },
+    {
+      "nombre": "Marcos Sebastián Villafañe Daona",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Instituto de Maternidad Nuestra Señora de las Mercedes",
+      "provincia": "Tucumán",
+      "email": "mvillafanedaona@gmail.com"
+    },
+    {
+      "nombre": "Dario Villalba",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Hospital Municipal de Chivilcoy",
+      "provincia": "Buenos Aires",
+      "email": "dariovillalba79@gmail.com",
+      "nota": "Registrado dos veces con el mismo email; se cuenta una sola vez."
+    },
+    {
+      "nombre": "Guillermo Tellechea",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Internación domiciliaria",
+      "provincia": "Buenos Aires",
+      "email": "gttellgui1@gmail.com"
+    },
+    {
+      "nombre": "Enrique Javier Manrique Soto",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Neoclínica",
+      "provincia": "Córdoba",
+      "email": "javiermanriquesoto@gmail.com"
+    },
+    {
+      "nombre": "Cecilia Giongo",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "HIGA Eva Perón — San Martín",
+      "provincia": "Buenos Aires",
+      "email": "ceciliagiongo@gmail.com"
+    },
+    {
+      "nombre": "Gianina Mariana Ferro",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "Clínica Integral de Disfagia",
+      "provincia": "Mendoza",
+      "email": "lic.ferrogianina@gmail.com"
+    },
+    {
+      "nombre": "Daniela Coria",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "Hospital Dr. Marcial Quiroga / Sanatorio Argentino",
+      "provincia": "San Juan",
+      "email": "daniela.a.coria@gmail.com"
+    },
+    {
+      "nombre": "Brenda Barroso",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "Sanatorio de la Trinidad Ramos Mejía",
+      "provincia": "Buenos Aires",
+      "email": "bren.barroso@gmail.com"
+    },
+    {
+      "nombre": "Mariana Vogel",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "Hospital Nivel 3 SAMIC Eldorado",
+      "provincia": "Misiones",
+      "email": "marianasvogel@gmail.com"
+    },
+    {
+      "nombre": "Maximiliano Ayraudo",
+      "profesion": "Kinesiólogo",
+      "institucionDeclarada": "Santa Catalina Clínica de Neurorehabilitación — sede Remeo",
+      "provincia": "Buenos Aires",
+      "email": "maxiayraudo@gmail.com"
+    },
+    {
+      "nombre": "Gimena Herrera",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "IPRO",
+      "provincia": "Mendoza",
+      "email": "gimenitaherrera07@gmail.com"
+    },
+    {
+      "nombre": "Carla Denicola",
+      "profesion": "Licenciada en Terapia Física",
+      "institucionDeclarada": "Fleni Escobar",
+      "provincia": "Buenos Aires",
+      "email": "car610.cd@gmail.com"
+    },
+    {
+      "nombre": "Claudia Vanesa Rojas",
+      "profesion": "Kinesióloga",
+      "institucionDeclarada": "HIGA P. V. Cordero",
+      "provincia": "Buenos Aires",
+      "email": "vanerojas64@gmail.com"
+    },
+    {
+      "nombre": "Andrea Carolina Atencio",
+      "profesion": null,
+      "institucionDeclarada": "Domicilios particulares",
+      "provincia": "Mendoza",
+      "email": null
+    },
+    {
+      "nombre": "Luciana Fonseca",
+      "profesion": null,
+      "institucionDeclarada": "Hospital de Clínicas Presidente Dr. Nicolás Avellaneda",
+      "provincia": "Tucumán",
+      "email": null
+    }
+  ]
+}
