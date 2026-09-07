@@ -1,0 +1,355 @@
+{
+  "actualizado": "2026-09-07",
+  "total": 36,
+  "areas": [
+    {
+      "area": 1,
+      "nombre": "Metropolitana",
+      "provincias": [
+        "Ciudad de Buenos Aires",
+        "Buenos Aires"
+      ],
+      "hospitales": 8
+    },
+    {
+      "area": 2,
+      "nombre": "NEA · Litoral",
+      "provincias": [
+        "Santa Fe",
+        "Entre Ríos",
+        "Corrientes",
+        "Misiones",
+        "Chaco",
+        "Formosa"
+      ],
+      "hospitales": 7
+    },
+    {
+      "area": 3,
+      "nombre": "NOA",
+      "provincias": [
+        "Jujuy",
+        "Salta",
+        "Tucumán",
+        "Catamarca",
+        "Santiago del Estero",
+        "La Rioja"
+      ],
+      "hospitales": 6
+    },
+    {
+      "area": 4,
+      "nombre": "Centro · Cuyo",
+      "provincias": [
+        "Córdoba",
+        "San Juan",
+        "Mendoza",
+        "San Luis",
+        "La Pampa"
+      ],
+      "hospitales": 7
+    },
+    {
+      "area": 5,
+      "nombre": "Patagonia",
+      "provincias": [
+        "Neuquén",
+        "Río Negro",
+        "Chubut",
+        "Santa Cruz",
+        "Tierra del Fuego"
+      ],
+      "hospitales": 8
+    }
+  ],
+  "hospitales": [
+    {
+      "n": 1,
+      "nombre": "Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”",
+      "ciudad": "CABA",
+      "prov": "Ciudad de Buenos Aires",
+      "tipo": "Pediátrico",
+      "area": 1
+    },
+    {
+      "n": 2,
+      "nombre": "Hospital General de Niños “Dr. Ricardo Gutiérrez”",
+      "ciudad": "CABA",
+      "prov": "Ciudad de Buenos Aires",
+      "tipo": "Pediátrico",
+      "area": 1
+    },
+    {
+      "n": 3,
+      "nombre": "Hospital General de Niños “Pedro de Elizalde”",
+      "ciudad": "CABA",
+      "prov": "Ciudad de Buenos Aires",
+      "tipo": "Pediátrico",
+      "area": 1
+    },
+    {
+      "n": 4,
+      "nombre": "Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”",
+      "ciudad": "La Plata",
+      "prov": "Buenos Aires",
+      "tipo": "Pediátrico",
+      "area": 1
+    },
+    {
+      "n": 5,
+      "nombre": "Hospital del Niño “Prof. Dr. Ramón Exeni”",
+      "ciudad": "San Justo, La Matanza",
+      "prov": "Buenos Aires",
+      "tipo": "Pediátrico",
+      "area": 1
+    },
+    {
+      "n": 6,
+      "nombre": "Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”",
+      "ciudad": "Mar del Plata",
+      "prov": "Buenos Aires",
+      "tipo": "Materno-infantil",
+      "area": 1
+    },
+    {
+      "n": 7,
+      "nombre": "Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”",
+      "ciudad": "San Isidro",
+      "prov": "Buenos Aires",
+      "tipo": "Materno-infantil",
+      "area": 1
+    },
+    {
+      "n": 8,
+      "nombre": "Hospital Nacional Profesor Alejandro Posadas",
+      "ciudad": "El Palomar, Morón",
+      "prov": "Buenos Aires",
+      "tipo": "General de alta complejidad · referente pediátrico",
+      "area": 1
+    },
+    {
+      "n": 9,
+      "nombre": "Hospital Interzonal de Niños “Eva Perón”",
+      "ciudad": "San Fernando del Valle de Catamarca",
+      "prov": "Catamarca",
+      "tipo": "Pediátrico",
+      "area": 3
+    },
+    {
+      "n": 10,
+      "nombre": "Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”",
+      "ciudad": "Resistencia",
+      "prov": "Chaco",
+      "tipo": "Pediátrico",
+      "area": 2
+    },
+    {
+      "n": 11,
+      "nombre": "Hospital Zonal de Trelew “Dr. Adolfo Margara”",
+      "ciudad": "Trelew",
+      "prov": "Chubut",
+      "tipo": "General · referente pediátrico",
+      "area": 5
+    },
+    {
+      "n": 12,
+      "nombre": "Hospital Regional de Comodoro Rivadavia",
+      "ciudad": "Comodoro Rivadavia",
+      "prov": "Chubut",
+      "tipo": "General · referente pediátrico del sur provincial",
+      "area": 5
+    },
+    {
+      "n": 13,
+      "nombre": "Hospital de Niños de la Santísima Trinidad",
+      "ciudad": "Córdoba",
+      "prov": "Córdoba",
+      "tipo": "Pediátrico",
+      "area": 4
+    },
+    {
+      "n": 14,
+      "nombre": "Hospital Pediátrico del Niño Jesús",
+      "ciudad": "Córdoba",
+      "prov": "Córdoba",
+      "tipo": "Pediátrico",
+      "area": 4
+    },
+    {
+      "n": 15,
+      "nombre": "Hospital Infantil Municipal",
+      "ciudad": "Córdoba",
+      "prov": "Córdoba",
+      "tipo": "Pediátrico",
+      "area": 4
+    },
+    {
+      "n": 16,
+      "nombre": "Hospital Pediátrico “Juan Pablo II”",
+      "ciudad": "Corrientes",
+      "prov": "Corrientes",
+      "tipo": "Pediátrico",
+      "area": 2
+    },
+    {
+      "n": 17,
+      "nombre": "Hospital Materno Infantil San Roque",
+      "ciudad": "Paraná",
+      "prov": "Entre Ríos",
+      "tipo": "Materno-infantil",
+      "area": 2
+    },
+    {
+      "n": 18,
+      "nombre": "Hospital de la Madre y el Niño",
+      "ciudad": "Formosa",
+      "prov": "Formosa",
+      "tipo": "Materno-infantil",
+      "area": 2
+    },
+    {
+      "n": 19,
+      "nombre": "Hospital Materno Infantil “Dr. Héctor Quintana”",
+      "ciudad": "San Salvador de Jujuy",
+      "prov": "Jujuy",
+      "tipo": "Materno-infantil",
+      "area": 3
+    },
+    {
+      "n": 20,
+      "nombre": "Hospital “Dr. Lucio Molas”",
+      "ciudad": "Santa Rosa",
+      "prov": "La Pampa",
+      "tipo": "General · referente pediátrico provincial",
+      "area": 4
+    },
+    {
+      "n": 21,
+      "nombre": "Hospital de la Madre y el Niño “Inmaculada Concepción de María”",
+      "ciudad": "La Rioja",
+      "prov": "La Rioja",
+      "tipo": "Materno-infantil",
+      "area": 3
+    },
+    {
+      "n": 22,
+      "nombre": "Hospital Pediátrico “Dr. Humberto J. Notti”",
+      "ciudad": "Guaymallén",
+      "prov": "Mendoza",
+      "tipo": "Pediátrico",
+      "area": 4
+    },
+    {
+      "n": 23,
+      "nombre": "Hospital de Pediatría “Dr. Fernando Barreyro”",
+      "ciudad": "Posadas",
+      "prov": "Misiones",
+      "tipo": "Pediátrico",
+      "area": 2
+    },
+    {
+      "n": 24,
+      "nombre": "Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”",
+      "ciudad": "Neuquén",
+      "prov": "Neuquén",
+      "tipo": "General de alta complejidad · referente pediátrico y UTIP de Patagonia norte",
+      "area": 5
+    },
+    {
+      "n": 25,
+      "nombre": "Hospital Zonal Bariloche “Dr. Ramón Carrillo”",
+      "ciudad": "San Carlos de Bariloche",
+      "prov": "Río Negro",
+      "tipo": "General · referente pediátrico zonal",
+      "area": 5
+    },
+    {
+      "n": 26,
+      "nombre": "Hospital “Artémides Zatti”",
+      "ciudad": "Viedma",
+      "prov": "Río Negro",
+      "tipo": "General · cabecera Zona Sanitaria III",
+      "area": 5
+    },
+    {
+      "n": 27,
+      "nombre": "Hospital Público Materno Infantil",
+      "ciudad": "Salta",
+      "prov": "Salta",
+      "tipo": "Materno-infantil",
+      "area": 3
+    },
+    {
+      "n": 28,
+      "nombre": "Hospital “Dr. Guillermo Rawson”",
+      "ciudad": "San Juan",
+      "prov": "San Juan",
+      "tipo": "General · referente pediátrico provincial",
+      "area": 4
+    },
+    {
+      "n": 29,
+      "nombre": "Hospital Pediátrico San Luis",
+      "ciudad": "San Luis",
+      "prov": "San Luis",
+      "tipo": "Pediátrico",
+      "area": 4
+    },
+    {
+      "n": 30,
+      "nombre": "Hospital Regional “Dr. José Formenti”",
+      "ciudad": "Río Gallegos",
+      "prov": "Santa Cruz",
+      "tipo": "General · referente pediátrico provincial",
+      "area": 5
+    },
+    {
+      "n": 31,
+      "nombre": "Hospital de Niños “Dr. Orlando Alassia”",
+      "ciudad": "Santa Fe",
+      "prov": "Santa Fe",
+      "tipo": "Pediátrico",
+      "area": 2
+    },
+    {
+      "n": 32,
+      "nombre": "Hospital de Niños “Víctor J. Vilela”",
+      "ciudad": "Rosario",
+      "prov": "Santa Fe",
+      "tipo": "Pediátrico",
+      "area": 2
+    },
+    {
+      "n": 33,
+      "nombre": "Centro Provincial de Salud Infantil “Eva Perón” (CePSI)",
+      "ciudad": "Santiago del Estero",
+      "prov": "Santiago del Estero",
+      "tipo": "Pediátrico",
+      "area": 3
+    },
+    {
+      "n": 34,
+      "nombre": "Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”",
+      "ciudad": "Ushuaia",
+      "prov": "Tierra del Fuego",
+      "tipo": "General · referente pediátrico",
+      "area": 5
+    },
+    {
+      "n": 35,
+      "nombre": "Hospital Regional Río Grande “Nuestra Señora de la Candelaria”",
+      "ciudad": "Río Grande",
+      "prov": "Tierra del Fuego",
+      "tipo": "General · referente pediátrico",
+      "area": 5
+    },
+    {
+      "n": 36,
+      "nombre": "Hospital del Niño Jesús",
+      "ciudad": "San Miguel de Tucumán",
+      "prov": "Tucumán",
+      "tipo": "Pediátrico",
+      "area": 3
+    }
+  ]
+}
