@@ -11,18 +11,21 @@
     --page:#f7f8f7; --surface:#fcfcfb; --ink:#101211; --ink-2:#50534f;
     --muted:#848781; --hairline:#e2e2dc; --border:rgba(16,18,17,.10);
     --a1:#1d6ec9; --a2:#366a04; --a3:#dc9d39; --a4:#b93c50; --a5:#d089ef;
+    --tt-ink1:#ffffff; --tt-ink2:#ffffff; --tt-ink3:#14130f; --tt-ink4:#ffffff; --tt-ink5:#14130f;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --page:#0e0f0e; --surface:#1a1a19; --ink:#f4f4ef; --ink-2:#c3c2b7;
       --muted:#8f8f88; --hairline:#2c2c2a; --border:rgba(255,255,255,.12);
       --a1:#136d9e; --a2:#15ac7d; --a3:#cd7c2d; --a4:#aa3262; --a5:#a278e4;
+      --tt-ink1:#ffffff; --tt-ink2:#0d0d0c; --tt-ink3:#0d0d0c; --tt-ink4:#ffffff; --tt-ink5:#0d0d0c;
     }
   }
   :root[data-theme="dark"]{
     --page:#0e0f0e; --surface:#1a1a19; --ink:#f4f4ef; --ink-2:#c3c2b7;
     --muted:#8f8f88; --hairline:#2c2c2a; --border:rgba(255,255,255,.12);
     --a1:#136d9e; --a2:#15ac7d; --a3:#cd7c2d; --a4:#aa3262; --a5:#a278e4;
+    --tt-ink1:#ffffff; --tt-ink2:#0d0d0c; --tt-ink3:#0d0d0c; --tt-ink4:#ffffff; --tt-ink5:#0d0d0c;
   }
   *{box-sizing:border-box}
   body{
@@ -116,14 +119,26 @@
   td.num{color:var(--muted); font-variant-numeric:tabular-nums; width:2.4rem}
   td.tipo{color:var(--ink-2); font-size:.82rem}
   #tooltip{
-    position:fixed; pointer-events:none; z-index:10; display:none; max-width:280px;
+    position:fixed; pointer-events:none; z-index:10; display:none; width:min(340px, 86vw);
     background:var(--surface); color:var(--ink); border:1px solid var(--border);
-    border-radius:8px; padding:.6rem .75rem; font-size:.8rem; line-height:1.45;
-    box-shadow:0 4px 18px rgba(0,0,0,.18);
+    border-radius:10px; overflow:hidden; font-size:.83rem; line-height:1.45;
+    box-shadow:0 10px 32px rgba(0,0,0,.26);
   }
-  #tooltip b{font-family:"Archivo",system-ui,sans-serif; font-size:.86rem}
-  #tooltip .tt-area{color:var(--ink-2); margin:.05rem 0 .3rem}
-  #tooltip ul{margin:0; padding-left:1rem}
+  #tooltip .tt-head{
+    padding:.65rem .85rem .55rem;
+  }
+  #tooltip .tt-head b{
+    font-family:"Archivo",system-ui,sans-serif; font-size:1rem; font-weight:700; display:block;
+  }
+  #tooltip .tt-head span{font-size:.74rem; opacity:.92; letter-spacing:.04em; text-transform:uppercase}
+  #tooltip .tt-body{padding:.55rem .85rem .7rem}
+  #tooltip ol{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.35rem}
+  #tooltip ol li::marker{color:var(--muted); font-variant-numeric:tabular-nums}
+  #tooltip .tt-city{color:var(--muted); font-size:.75rem; display:block}
+  #tooltip .tt-note{margin:0; color:var(--ink-2); font-size:.78rem}
+  .tt-h1{background:var(--a1); color:var(--tt-ink1)} .tt-h2{background:var(--a2); color:var(--tt-ink2)}
+  .tt-h3{background:var(--a3); color:var(--tt-ink3)} .tt-h4{background:var(--a4); color:var(--tt-ink4)}
+  .tt-h5{background:var(--a5); color:var(--tt-ink5)}
   footer.pie{margin-top:2.5rem; font-size:.78rem; color:var(--muted); line-height:1.5}
   @media (prefers-reduced-motion: reduce){ .prov{transition:none} }
 </style>
@@ -310,10 +325,10 @@
 
 <script>
 (function(){
-  var DATA = {"provArea":{"Ciudad de Buenos Aires":1,"Buenos Aires":1,"Santa Fe":2,"Entre Ríos":2,"Corrientes":2,"Misiones":2,"Chaco":2,"Formosa":2,"Jujuy":3,"Salta":3,"Tucumán":3,"Catamarca":3,"Santiago del Estero":3,"La Rioja":3,"Córdoba":4,"San Juan":4,"Mendoza":4,"San Luis":4,"La Pampa":4,"Neuquén":5,"Río Negro":5,"Chubut":5,"Santa Cruz":5,"Tierra del Fuego":5,"Islas Malvinas":5},"areaNames":{"1":"Metropolitana","2":"NEA · Litoral","3":"NOA","4":"Centro · Cuyo","5":"Patagonia"},"hospitales":[{"nombre":"Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”","prov":"Ciudad de Buenos Aires"},{"nombre":"Hospital General de Niños “Dr. Ricardo Gutiérrez”","prov":"Ciudad de Buenos Aires"},{"nombre":"Hospital General de Niños “Pedro de Elizalde”","prov":"Ciudad de Buenos Aires"},{"nombre":"Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”","prov":"Buenos Aires"},{"nombre":"Hospital del Niño “Prof. Dr. Ramón Exeni”","prov":"Buenos Aires"},{"nombre":"Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”","prov":"Buenos Aires"},{"nombre":"Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”","prov":"Buenos Aires"},{"nombre":"Hospital Nacional Profesor Alejandro Posadas","prov":"Buenos Aires"},{"nombre":"Hospital Interzonal de Niños “Eva Perón”","prov":"Catamarca"},{"nombre":"Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”","prov":"Chaco"},{"nombre":"Hospital Zonal de Trelew “Dr. Adolfo Margara”","prov":"Chubut"},{"nombre":"Hospital Regional de Comodoro Rivadavia","prov":"Chubut"},{"nombre":"Hospital de Niños de la Santísima Trinidad","prov":"Córdoba"},{"nombre":"Hospital Pediátrico del Niño Jesús","prov":"Córdoba"},{"nombre":"Hospital Infantil Municipal","prov":"Córdoba"},{"nombre":"Hospital Pediátrico “Juan Pablo II”","prov":"Corrientes"},{"nombre":"Hospital Materno Infantil San Roque","prov":"Entre Ríos"},{"nombre":"Hospital de la Madre y el Niño","prov":"Formosa"},{"nombre":"Hospital Materno Infantil “Dr. Héctor Quintana”","prov":"Jujuy"},{"nombre":"Hospital “Dr. Lucio Molas”","prov":"La Pampa"},{"nombre":"Hospital de la Madre y el Niño “Inmaculada Concepción de María”","prov":"La Rioja"},{"nombre":"Hospital Pediátrico “Dr. Humberto J. Notti”","prov":"Mendoza"},{"nombre":"Hospital de Pediatría “Dr. Fernando Barreyro”","prov":"Misiones"},{"nombre":"Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”","prov":"Neuquén"},{"nombre":"Hospital Zonal Bariloche “Dr. Ramón Carrillo”","prov":"Río Negro"},{"nombre":"Hospital “Artémides Zatti”","prov":"Río Negro"},{"nombre":"Hospital Público Materno Infantil","prov":"Salta"},{"nombre":"Hospital “Dr. Guillermo Rawson”","prov":"San Juan"},{"nombre":"Hospital Pediátrico San Luis","prov":"San Luis"},{"nombre":"Hospital Regional “Dr. José Formenti”","prov":"Santa Cruz"},{"nombre":"Hospital de Niños “Dr. Orlando Alassia”","prov":"Santa Fe"},{"nombre":"Hospital de Niños “Víctor J. Vilela”","prov":"Santa Fe"},{"nombre":"Centro Provincial de Salud Infantil “Eva Perón” (CePSI)","prov":"Santiago del Estero"},{"nombre":"Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”","prov":"Tierra del Fuego"},{"nombre":"Hospital Regional Río Grande “Nuestra Señora de la Candelaria”","prov":"Tierra del Fuego"},{"nombre":"Hospital del Niño Jesús","prov":"Tucumán"}]};
+  var DATA = {"provArea":{"Ciudad de Buenos Aires":1,"Buenos Aires":1,"Santa Fe":2,"Entre Ríos":2,"Corrientes":2,"Misiones":2,"Chaco":2,"Formosa":2,"Jujuy":3,"Salta":3,"Tucumán":3,"Catamarca":3,"Santiago del Estero":3,"La Rioja":3,"Córdoba":4,"San Juan":4,"Mendoza":4,"San Luis":4,"La Pampa":4,"Neuquén":5,"Río Negro":5,"Chubut":5,"Santa Cruz":5,"Tierra del Fuego":5,"Islas Malvinas":5},"areaNames":{"1":"Metropolitana","2":"NEA · Litoral","3":"NOA","4":"Centro · Cuyo","5":"Patagonia"},"hospitales":[{"n":1,"nombre":"Hospital de Pediatría S.A.M.I.C. “Prof. Dr. Juan P. Garrahan”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":2,"nombre":"Hospital General de Niños “Dr. Ricardo Gutiérrez”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":3,"nombre":"Hospital General de Niños “Pedro de Elizalde”","ciudad":"CABA","prov":"Ciudad de Buenos Aires"},{"n":4,"nombre":"Hospital Interzonal de Agudos Especializado en Pediatría “Superiora Sor María Ludovica”","ciudad":"La Plata","prov":"Buenos Aires"},{"n":5,"nombre":"Hospital del Niño “Prof. Dr. Ramón Exeni”","ciudad":"San Justo, La Matanza","prov":"Buenos Aires"},{"n":6,"nombre":"Hospital Interzonal Especializado Materno Infantil “Don Victorio Tetamanti”","ciudad":"Mar del Plata","prov":"Buenos Aires"},{"n":7,"nombre":"Hospital Municipal Materno Infantil “Dr. Carlos Arturo Gianantonio”","ciudad":"San Isidro","prov":"Buenos Aires"},{"n":8,"nombre":"Hospital Nacional Profesor Alejandro Posadas","ciudad":"El Palomar, Morón","prov":"Buenos Aires"},{"n":9,"nombre":"Hospital Interzonal de Niños “Eva Perón”","ciudad":"San Fernando del Valle de Catamarca","prov":"Catamarca"},{"n":10,"nombre":"Hospital Pediátrico “Dr. Avelino Lorenzo Castelán”","ciudad":"Resistencia","prov":"Chaco"},{"n":11,"nombre":"Hospital Zonal de Trelew “Dr. Adolfo Margara”","ciudad":"Trelew","prov":"Chubut"},{"n":12,"nombre":"Hospital Regional de Comodoro Rivadavia","ciudad":"Comodoro Rivadavia","prov":"Chubut"},{"n":13,"nombre":"Hospital de Niños de la Santísima Trinidad","ciudad":"Córdoba","prov":"Córdoba"},{"n":14,"nombre":"Hospital Pediátrico del Niño Jesús","ciudad":"Córdoba","prov":"Córdoba"},{"n":15,"nombre":"Hospital Infantil Municipal","ciudad":"Córdoba","prov":"Córdoba"},{"n":16,"nombre":"Hospital Pediátrico “Juan Pablo II”","ciudad":"Corrientes","prov":"Corrientes"},{"n":17,"nombre":"Hospital Materno Infantil San Roque","ciudad":"Paraná","prov":"Entre Ríos"},{"n":18,"nombre":"Hospital de la Madre y el Niño","ciudad":"Formosa","prov":"Formosa"},{"n":19,"nombre":"Hospital Materno Infantil “Dr. Héctor Quintana”","ciudad":"San Salvador de Jujuy","prov":"Jujuy"},{"n":20,"nombre":"Hospital “Dr. Lucio Molas”","ciudad":"Santa Rosa","prov":"La Pampa"},{"n":21,"nombre":"Hospital de la Madre y el Niño “Inmaculada Concepción de María”","ciudad":"La Rioja","prov":"La Rioja"},{"n":22,"nombre":"Hospital Pediátrico “Dr. Humberto J. Notti”","ciudad":"Guaymallén","prov":"Mendoza"},{"n":23,"nombre":"Hospital de Pediatría “Dr. Fernando Barreyro”","ciudad":"Posadas","prov":"Misiones"},{"n":24,"nombre":"Hospital Provincial Neuquén “Dr. Eduardo Castro Rendón”","ciudad":"Neuquén","prov":"Neuquén"},{"n":25,"nombre":"Hospital Zonal Bariloche “Dr. Ramón Carrillo”","ciudad":"San Carlos de Bariloche","prov":"Río Negro"},{"n":26,"nombre":"Hospital “Artémides Zatti”","ciudad":"Viedma","prov":"Río Negro"},{"n":27,"nombre":"Hospital Público Materno Infantil","ciudad":"Salta","prov":"Salta"},{"n":28,"nombre":"Hospital “Dr. Guillermo Rawson”","ciudad":"San Juan","prov":"San Juan"},{"n":29,"nombre":"Hospital Pediátrico San Luis","ciudad":"San Luis","prov":"San Luis"},{"n":30,"nombre":"Hospital Regional “Dr. José Formenti”","ciudad":"Río Gallegos","prov":"Santa Cruz"},{"n":31,"nombre":"Hospital de Niños “Dr. Orlando Alassia”","ciudad":"Santa Fe","prov":"Santa Fe"},{"n":32,"nombre":"Hospital de Niños “Víctor J. Vilela”","ciudad":"Rosario","prov":"Santa Fe"},{"n":33,"nombre":"Centro Provincial de Salud Infantil “Eva Perón” (CePSI)","ciudad":"Santiago del Estero","prov":"Santiago del Estero"},{"n":34,"nombre":"Hospital Regional Ushuaia “Gobernador Ernesto M. Campos”","ciudad":"Ushuaia","prov":"Tierra del Fuego"},{"n":35,"nombre":"Hospital Regional Río Grande “Nuestra Señora de la Candelaria”","ciudad":"Río Grande","prov":"Tierra del Fuego"},{"n":36,"nombre":"Hospital del Niño Jesús","ciudad":"San Miguel de Tucumán","prov":"Tucumán"}]};
   var tt = document.getElementById("tooltip");
   var hospByProv = {};
-  DATA.hospitales.forEach(function(h){ (hospByProv[h.prov] = hospByProv[h.prov] || []).push(h.nombre); });
+  DATA.hospitales.forEach(function(h){ (hospByProv[h.prov] = hospByProv[h.prov] || []).push(h); });
 
   function show(ev){
     var prov = ev.target.getAttribute("data-prov");
@@ -323,14 +338,20 @@
     var area = DATA.provArea[prov];
     var hs = hospByProv[key] || [];
     var head = prov === "Ciudad de Buenos Aires" ? "Ciudad Autónoma de Buenos Aires" : prov;
-    var html = "<b>" + head + "</b>";
+    var html = '<div class="tt-head tt-h' + area + '"><b>' + head + "</b>" +
+               "<span>Área " + area + " — " + DATA.areaNames[area] +
+               (isMalv ? "" : " · " + hs.length + (hs.length === 1 ? " hospital" : " hospitales")) +
+               "</span></div>";
+    html += '<div class="tt-body">';
     if(isMalv){
-      html += '<p class="tt-area">Prov. de Tierra del Fuego AeIAS · Área ' + area + " — " + DATA.areaNames[area] + "</p>";
+      html += '<p class="tt-note">Parte de la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur.</p>';
     } else {
-      html += '<p class="tt-area">Área ' + area + " — " + DATA.areaNames[area] +
-              " · " + hs.length + (hs.length === 1 ? " hospital" : " hospitales") + "</p>";
-      html += "<ul>" + hs.map(function(n){ return "<li>" + n + "</li>"; }).join("") + "</ul>";
+      html += "<ol>" + hs.map(function(h){
+        return '<li value="' + h.n + '">' + h.nombre +
+               '<span class="tt-city">' + h.ciudad + "</span></li>";
+      }).join("") + "</ol>";
     }
+    html += "</div>";
     tt.innerHTML = html;
     tt.style.display = "block";
     move(ev);
@@ -344,16 +365,20 @@
   }
   function hide(){ tt.style.display = "none"; }
 
+  function showCentered(ev){
+    var r = ev.target.getBoundingClientRect();
+    show({ target: ev.target, clientX: r.left + r.width/2, clientY: r.top + r.height/2 });
+  }
   document.querySelectorAll(".prov").forEach(function(p){
     p.addEventListener("mouseenter", show);
     p.addEventListener("mousemove", move);
     p.addEventListener("mouseleave", hide);
-    p.addEventListener("focus", function(ev){
-      var r = ev.target.getBoundingClientRect();
-      show({ target: ev.target, clientX: r.left + r.width/2, clientY: r.top + r.height/2 });
-    });
+    p.addEventListener("focus", showCentered);
     p.addEventListener("blur", hide);
+    p.addEventListener("click", function(ev){ ev.stopPropagation(); showCentered(ev); });
   });
+  document.addEventListener("click", hide);
+  document.addEventListener("keydown", function(ev){ if(ev.key === "Escape") hide(); });
 })();
 </script>
 </body>
