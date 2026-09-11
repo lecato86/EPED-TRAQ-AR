@@ -50,11 +50,14 @@
     font-size:1.65rem; line-height:1.1;
   }
   .stat span{font-size:.82rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase}
-  .grid{display:grid; grid-template-columns:minmax(230px,300px) minmax(230px,330px) minmax(0,1fr); gap:1.6rem; align-items:start}
+  .grid{display:grid; grid-template-columns:minmax(220px,270px) minmax(0,1fr) minmax(300px,400px); gap:1.6rem; align-items:start}
   @media (max-width:1150px){ .grid{grid-template-columns:minmax(220px,300px) 1fr} .grid > .map-cobertura{grid-column:1 / -1} }
   @media (max-width:700px){ .grid{grid-template-columns:1fr} }
   .map-cobertura .map-body{display:flex; gap:1.1rem; align-items:flex-start}
-  .map-cobertura .map-body svg{flex:1 1 0; min-width:0; max-width:330px}
+  .map-cobertura .map-body svg{flex:1 1 0; min-width:0; max-width:200px}
+  .map-cobertura .map-body{gap:.9rem}
+  .map-cobertura .caba-callout text{font-size:15px}
+  .map-cobertura .caba-callout line{stroke-width:1.4} .map-cobertura .caba-callout circle{r:4.5; stroke-width:1.6}
   @media (max-width:520px){ .map-cobertura .map-body{flex-direction:column} .map-cobertura .map-body svg{max-width:none} }
   .map-panel{
     background:var(--surface); border:1px solid var(--border); border-radius:10px;
@@ -206,12 +209,12 @@
     font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:.78rem;
     letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); margin:0 0 .7rem;
   }
-  .leyenda{list-style:none; margin:.4rem 0 0; padding:0; flex:0 0 200px; display:flex; flex-direction:column; gap:.85rem}
-  .leyenda li{display:flex; align-items:flex-start; gap:.6rem; font-size:.8rem; line-height:1.4}
+  .leyenda{list-style:none; margin:.2rem 0 0; padding:0; flex:0 0 165px; display:flex; flex-direction:column; gap:.75rem}
+  .leyenda li{display:flex; align-items:flex-start; gap:.55rem; font-size:.76rem; line-height:1.35}
   .leyenda li > div{min-width:0}
   .leyenda .chip{margin-top:.2rem; border:1px solid var(--border)}
   .leyenda b{font-weight:600; display:block}
-  .leyenda span{color:var(--muted); font-size:.74rem}
+  .leyenda span{color:var(--muted); font-size:.7rem}
   .leyenda .ley-n{margin-left:auto; font-family:"Archivo",system-ui,sans-serif; font-weight:700;
     font-variant-numeric:tabular-nums; color:var(--ink-2); flex:none}
   @media (prefers-reduced-motion: reduce){ .prov{transition:none} }
