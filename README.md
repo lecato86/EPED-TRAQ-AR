@@ -8,7 +8,7 @@ con carga equilibrada de hospitales públicos pediátricos / referentes pediátr
 
 | Archivo | Descripción |
 |---|---|
-| `index.html` | Mapa interactivo autocontenido (SVG inline, tooltips por provincia, listado por área). Funciona abriéndolo directo en el navegador o vía GitHub Pages. |
+| `index.html` | Mapa interactivo autocontenido (SVG inline, tooltips por provincia, listado por área) más un segundo mapa **estático de cobertura** que colorea cada provincia según si sus hospitales del estudio tienen usuarios registrados (completa / parcial / solo otras instituciones / sin registros). Funciona abriéndolo directo en el navegador o vía GitHub Pages. |
 | `data/hospitales.json` | Listado estructurado de los 36 hospitales con provincia, localidad, perfil y área asignada. |
 
 ## Las 5 áreas
