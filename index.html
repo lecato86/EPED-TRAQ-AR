@@ -33,28 +33,35 @@
     font-family:"Asap",system-ui,-apple-system,"Segoe UI",sans-serif;
     font-size:16px; line-height:1.55;
   }
-  .wrap{max-width:1400px; margin:0 auto; padding:2.5rem 1.5rem 4rem}
-  header.top{margin-bottom:2rem}
+  .wrap{max-width:1400px; margin:0 auto; padding:1.4rem 1.5rem 4rem}
+  header.top{margin-bottom:1.2rem; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:.6rem 2.5rem}
+  header.top .top-txt{flex:1 1 480px; min-width:0}
   .eyebrow{
     font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:.78rem;
     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); margin:0 0 .5rem;
   }
   h1{
-    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:clamp(1.9rem,4.5vw,2.7rem);
-    line-height:1.08; margin:0 0 .75rem; text-wrap:balance; letter-spacing:-.01em;
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:clamp(1.6rem,3.2vw,2.1rem);
+    line-height:1.08; margin:0 0 .4rem; text-wrap:balance; letter-spacing:-.01em;
   }
-  .lede{max-width:62ch; color:var(--ink-2); margin:0}
-  .stats{display:flex; gap:2.2rem; flex-wrap:wrap; margin-top:1.4rem}
+  .lede{max-width:70ch; color:var(--ink-2); margin:0; font-size:.92rem; line-height:1.45}
+  .stats{display:flex; gap:1.8rem; flex-wrap:wrap; margin-top:0; padding-bottom:.2rem}
   .stat b{
     display:block; font-family:"Archivo",system-ui,sans-serif; font-weight:700;
-    font-size:1.65rem; line-height:1.1;
+    font-size:1.45rem; line-height:1.1;
   }
   .stat span{font-size:.82rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase}
-  .grid{display:grid; grid-template-columns:minmax(220px,270px) minmax(0,1fr) minmax(300px,400px); gap:1.6rem; align-items:start}
-  @media (max-width:1150px){ .grid{grid-template-columns:minmax(220px,300px) 1fr} .grid > .map-cobertura{grid-column:1 / -1} }
+  .grid{display:grid; grid-template-columns:minmax(220px,270px) auto auto; gap:1.6rem; align-items:start; justify-content:start}
+  #mapa{height:clamp(420px, calc(100vh - 290px), 1000px); width:auto; max-width:100%; margin:0 auto}
+  .map-panel.interactivo{min-width:0}
+  .map-panel.interactivo .map-src, .map-panel.interactivo .map-title{width:0; min-width:100%}
+  @media (max-width:1150px){ #mapa{height:auto; width:100%} }
+  @media (max-width:1150px){ .grid{grid-template-columns:minmax(220px,300px) 1fr; justify-content:stretch} .grid > .map-cobertura{grid-column:1 / -1} }
   @media (max-width:700px){ .grid{grid-template-columns:1fr} }
   .map-cobertura .map-body{display:flex; gap:1.1rem; align-items:flex-start}
-  .map-cobertura .map-body svg{flex:1 1 0; min-width:0; max-width:200px}
+  .map-cobertura .map-body svg{flex:0 0 auto; height:clamp(240px, calc((100vh - 290px) * .55), 560px); width:auto}
+  @media (max-width:1150px){ .map-cobertura .map-body svg{flex:1 1 0; height:auto; max-width:260px} }
+  .map-cobertura .map-src{width:0; min-width:100%}
   .map-cobertura .map-body{gap:.9rem}
   .map-cobertura .caba-callout text{font-size:15px}
   .map-cobertura .caba-callout line{stroke-width:1.4} .map-cobertura .caba-callout circle{r:4.5; stroke-width:1.6}
@@ -225,11 +232,13 @@
 <body>
 <div class="wrap">
   <header class="top">
+    <div class="top-txt">
     <p class="eyebrow">EPED-TRAQ-AR · Red pública pediátrica</p>
     <h1>Cinco áreas, carga equilibrada</h1>
     <p class="lede">División de la República Argentina en 5 áreas operativas para el estudio EPED-TRAQ-AR.
     Cada área agrupa provincias contiguas y concentra una cantidad similar de hospitales públicos
     pediátricos y referentes pediátricos (6 a 8 por área, sobre un total de 36).</p>
+    </div>
     <div class="stats">
       <div class="stat"><b>36</b><span>hospitales</span></div>
       <div class="stat"><b>5</b><span>áreas</span></div>
@@ -288,7 +297,7 @@
       para ver sus hospitales y los profesionales registrados en cada uno; si en esa provincia hay
       profesionales de instituciones que no integran el estudio, aparecen aparte en la misma ventana.</p>
     </div>
-    <div class="map-panel">
+    <div class="map-panel interactivo">
       <p class="map-title">Áreas operativas · interactivo</p>
       <svg viewBox="0 0 422 900" role="img" aria-label="Mapa de la Argentina: 24 jurisdicciones agrupadas en 5 áreas EPED-TRAQ-AR" id="mapa">
       <path class="prov a2" d="M325.8 288.4L325.3 290.8L326.2 298.7L327.1 300.7L326.9 304.7L325.7 305.9L321.9 305.4L320.9 306.2L321.3 311.4L319.3 314.4L318.4 321.9L318.5 323.5L320.2 326.6L320.7 329.9L320.5 330.6L316.5 331.7L308.1 325.8L305.4 325.8L303.9 325.0L303.1 322.9L300.5 323.4L297.8 321.1L296.0 321.7L292.4 319.9L290.9 317.8L285.1 314.0L282.4 310.9L277.1 306.7L273.3 299.2L272.7 294.7L271.4 292.0L272.2 288.6L272.6 280.5L273.6 278.2L272.4 274.2L273.3 272.3L273.9 268.6L278.8 267.5L284.1 261.2L286.3 256.6L293.6 244.7L294.8 242.1L295.6 237.8L295.8 234.7L294.8 231.3L300.6 230.5L303.7 231.5L308.7 227.7L311.4 228.3L317.6 226.3L325.1 229.1L326.4 231.4L328.6 233.6L330.3 238.5L334.2 243.1L334.1 246.8L331.9 247.8L333.1 250.9L331.9 253.9L332.0 255.8L330.7 257.8L330.2 260.1L328.4 262.1L330.3 264.3L330.3 266.7L328.8 271.2L326.8 271.9L325.7 273.4L326.6 274.8L326.9 276.8L326.1 280.5L328.0 283.9L325.8 288.4Z" data-prov="Entre Ríos" tabindex="0" aria-label="Entre Ríos"></path>
