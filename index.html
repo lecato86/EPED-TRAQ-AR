@@ -54,7 +54,7 @@
   .grid{display:grid; grid-template-columns:minmax(220px,270px) auto auto; gap:1.6rem; align-items:start; justify-content:start}
   #mapa{height:clamp(420px, calc(100vh - 290px), 1000px); width:auto; max-width:100%; margin:0 auto}
   .map-panel.interactivo{min-width:0}
-  .map-panel.interactivo .map-src, .map-panel.interactivo .map-title{width:0; min-width:100%}
+  .map-panel.interactivo .map-src, .map-panel.interactivo .map-head, .map-panel.interactivo .div-desc{width:0; min-width:100%}
   @media (max-width:1150px){ #mapa{height:auto; width:100%} }
   @media (max-width:1150px){ .grid{grid-template-columns:minmax(220px,300px) 1fr; justify-content:stretch} .grid > .map-cobertura{grid-column:1 / -1} }
   @media (max-width:700px){ .grid{grid-template-columns:1fr} }
@@ -89,6 +89,20 @@
     paint-order:stroke; stroke:var(--surface); stroke-width:3px; stroke-linejoin:round;
   }
   .map-src{font-size:.72rem; color:var(--muted); margin:.6rem 0 0; line-height:1.45}
+  .map-head{display:flex; align-items:center; justify-content:space-between; gap:.5rem 1rem; flex-wrap:wrap; margin:0 0 .45rem}
+  .map-head .map-title{margin:0}
+  .map-select{display:flex; align-items:center; gap:.5rem; font-size:.76rem; color:var(--muted); letter-spacing:.04em; text-transform:uppercase}
+  .map-select select{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:.8rem; line-height:1.2;
+    color:var(--ink); background-color:var(--page); border:1px solid var(--border); border-radius:6px;
+    padding:.38rem 1.9rem .38rem .65rem; cursor:pointer; max-width:100%; text-transform:none; letter-spacing:0;
+    appearance:none; -webkit-appearance:none; -moz-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%23848781' stroke-width='1.6' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat; background-position:right .6rem center;
+  }
+  .map-select select:hover{border-color:var(--ink-2)}
+  .map-select select:focus-visible{outline:2px solid var(--a1); outline-offset:1px}
+  .div-desc{font-size:.78rem; color:var(--ink-2); margin:0 0 .7rem; line-height:1.4}
   .cards{display:flex; flex-direction:column; gap:.65rem}
   .card{
     display:flex; align-items:center; gap:.9rem;
@@ -246,7 +260,7 @@
 
   <div class="grid">
     <div class="cards-col">
-      <div class="cards">
+      <div class="cards" id="cards">
       <div class="card" data-area="1">
         <span class="chip a1bg"></span>
         <div class="card-txt">
@@ -288,13 +302,19 @@
         <div class="card-n">8</div>
       </div>
       </div>
-      <p class="nota">36 hospitales no se reparten exactos entre 5 áreas: el rango 6–8 es la partición
-      más pareja posible manteniendo áreas geográficamente contiguas. Pasá el cursor por una provincia
+      <p class="nota"><span id="nota-division">36 hospitales no se reparten exactos entre 5 áreas: el rango 6–8 es la partición
+      más pareja posible manteniendo áreas geográficamente contiguas.</span> Pasá el cursor por una provincia
       para ver sus hospitales y los profesionales registrados en cada uno; si en esa provincia hay
       profesionales de instituciones que no integran el estudio, aparecen aparte en la misma ventana.</p>
     </div>
     <div class="map-panel interactivo">
-      <p class="map-title">Áreas operativas · interactivo</p>
+      <div class="map-head">
+        <p class="map-title">Mapa por zonas · interactivo</p>
+        <label class="map-select">División
+          <select id="division" aria-label="Elegir cómo se divide el mapa en zonas"></select>
+        </label>
+      </div>
+      <p class="div-desc" id="div-desc"></p>
       <svg viewBox="0 0 422 900" role="img" aria-label="Mapa de la Argentina: 24 jurisdicciones agrupadas en 5 áreas EPED-TRAQ-AR" id="mapa">
       <path class="prov a2" d="M325.8 288.4L325.3 290.8L326.2 298.7L327.1 300.7L326.9 304.7L325.7 305.9L321.9 305.4L320.9 306.2L321.3 311.4L319.3 314.4L318.4 321.9L318.5 323.5L320.2 326.6L320.7 329.9L320.5 330.6L316.5 331.7L308.1 325.8L305.4 325.8L303.9 325.0L303.1 322.9L300.5 323.4L297.8 321.1L296.0 321.7L292.4 319.9L290.9 317.8L285.1 314.0L282.4 310.9L277.1 306.7L273.3 299.2L272.7 294.7L271.4 292.0L272.2 288.6L272.6 280.5L273.6 278.2L272.4 274.2L273.3 272.3L273.9 268.6L278.8 267.5L284.1 261.2L286.3 256.6L293.6 244.7L294.8 242.1L295.6 237.8L295.8 234.7L294.8 231.3L300.6 230.5L303.7 231.5L308.7 227.7L311.4 228.3L317.6 226.3L325.1 229.1L326.4 231.4L328.6 233.6L330.3 238.5L334.2 243.1L334.1 246.8L331.9 247.8L333.1 250.9L331.9 253.9L332.0 255.8L330.7 257.8L330.2 260.1L328.4 262.1L330.3 264.3L330.3 266.7L328.8 271.2L326.8 271.9L325.7 273.4L326.6 274.8L326.9 276.8L326.1 280.5L328.0 283.9L325.8 288.4Z" data-prov="Entre Ríos" tabindex="0" aria-label="Entre Ríos"></path>
       <path class="prov a3" d="M133.2 55.4L133.9 52.7L137.5 55.4L141.9 61.2L144.1 62.5L146.1 65.3L149.7 66.3L152.2 63.7L153.0 61.0L153.3 52.4L151.8 46.9L152.4 43.4L153.0 42.8L155.0 43.4L160.6 47.3L160.7 52.3L160.0 53.6L159.9 55.8L160.4 58.3L161.3 59.7L162.5 59.3L165.5 62.0L165.7 64.6L169.3 70.9L175.8 73.5L178.1 72.2L180.3 74.7L183.3 76.1L185.3 72.2L189.7 76.5L192.2 72.9L196.5 70.7L199.1 66.4L199.5 64.8L198.9 47.0L195.0 46.6L193.5 49.6L191.0 46.5L188.8 45.1L186.0 46.4L184.4 46.2L182.6 41.2L180.8 40.0L181.4 33.7L180.4 32.6L177.8 32.4L176.8 31.5L175.6 25.6L176.0 23.0L174.3 21.7L174.5 19.4L176.5 14.4L177.6 8.4L181.2 8.4L190.4 11.5L191.3 13.2L190.7 15.0L193.7 20.4L193.2 23.2L195.3 26.1L195.9 29.4L197.5 20.4L199.4 17.6L202.7 8.5L204.2 5.8L206.8 5.8L208.3 7.1L210.5 5.7L228.2 5.9L228.6 9.3L232.0 12.5L232.0 14.0L238.0 18.5L238.1 70.8L215.6 104.8L204.4 104.6L198.8 102.6L193.8 114.7L192.5 119.9L186.6 119.7L182.8 121.4L176.3 118.6L175.0 116.0L172.3 117.2L167.5 116.0L166.4 122.1L159.3 120.8L157.1 118.6L156.0 118.5L154.0 120.6L152.8 124.1L152.0 124.5L149.1 121.0L143.1 108.9L143.3 106.7L144.6 105.3L148.3 105.0L149.9 103.4L150.5 99.9L148.6 94.3L122.1 94.6L107.5 91.3L110.3 90.3L108.6 87.5L108.0 84.4L106.4 83.4L105.8 81.8L107.5 76.2L108.5 76.9L109.6 73.4L111.1 73.4L112.9 70.3L131.6 60.7L133.2 55.4Z" data-prov="Salta" tabindex="0" aria-label="Salta"></path>
@@ -321,11 +341,13 @@
       <path class="prov a4" d="M179.6 384.6L179.8 357.5L215.9 357.5L215.8 474.5L213.1 474.0L208.9 471.1L207.4 469.2L204.8 468.2L202.6 465.7L192.8 461.7L182.3 460.4L173.8 461.3L169.7 459.6L167.0 460.8L161.3 458.7L155.9 458.0L152.1 458.5L148.5 457.6L147.8 455.1L146.7 453.7L137.8 449.7L136.4 447.8L135.5 444.7L131.3 445.6L126.7 445.3L124.3 441.4L121.3 440.2L120.8 438.8L121.3 436.2L123.9 433.7L124.1 431.5L123.4 429.7L121.2 427.8L112.7 426.7L112.6 392.0L111.8 388.0L112.4 384.7L179.6 384.6Z" data-prov="La Pampa" tabindex="0" aria-label="La Pampa"></path>
       <path class="prov a4" d="M243.4 226.4L242.4 234.1L248.2 242.0L242.6 265.7L240.2 268.7L240.6 273.8L241.3 275.3L240.6 280.1L243.6 282.9L244.9 286.8L247.0 288.7L248.1 292.2L247.5 294.1L248.8 294.6L250.7 297.9L249.9 304.2L246.9 306.5L227.1 340.8L216.8 340.7L216.1 341.6L215.9 357.5L179.8 357.5L179.8 329.4L178.8 308.9L179.7 307.1L180.9 306.4L181.3 302.0L184.1 293.1L183.3 284.7L182.7 284.2L177.6 285.2L176.4 279.7L175.0 278.0L168.0 273.4L165.5 273.2L165.4 251.9L173.1 226.0L178.7 223.9L182.8 218.9L182.7 210.8L197.4 206.6L201.8 208.0L202.2 209.9L206.9 212.7L214.2 212.9L214.3 214.5L215.6 214.9L215.9 216.0L239.1 216.2L240.1 216.9L243.4 226.4Z" data-prov="Córdoba" tabindex="0" aria-label="Córdoba"></path>
       <path class="prov a5" d="M294.1 823.1L294.4 823.6L292.8 824.8L292.9 822.7L292.0 821.9L292.0 821.0L292.6 821.9L294.1 821.9L294.1 823.1ZM267.5 816.0L265.5 815.8L263.2 813.2L266.7 811.4L267.6 812.4L265.7 813.8L267.4 813.5L268.8 812.5L268.6 811.5L269.3 811.0L268.4 814.7L269.3 814.7L268.8 815.7L267.5 816.0ZM295.4 810.4L290.0 816.3L287.7 817.3L287.5 816.4L286.3 815.8L285.6 817.4L283.0 817.5L283.5 816.6L281.8 817.3L281.9 819.6L279.7 821.7L278.1 821.4L278.1 821.9L275.9 820.5L277.1 822.5L275.1 823.8L273.9 823.7L273.2 822.7L274.1 822.7L272.5 821.0L273.0 820.4L270.3 820.3L272.3 822.1L270.7 822.1L265.6 818.7L266.0 817.8L268.6 818.3L269.4 819.2L269.1 818.2L271.9 817.7L269.7 816.2L272.9 816.9L273.5 816.4L276.3 817.4L276.2 816.8L277.9 816.5L279.1 815.2L276.7 815.9L274.8 815.4L277.5 815.1L278.1 814.2L278.2 811.6L279.7 811.2L279.0 811.9L279.9 811.8L279.6 813.0L280.4 813.6L281.3 812.7L281.3 810.7L282.9 811.5L283.7 811.0L283.8 809.5L280.4 809.6L279.9 810.6L275.9 811.7L274.3 810.1L274.4 808.5L277.8 809.3L283.0 808.1L286.0 809.1L280.9 805.8L277.2 804.6L276.9 803.4L279.4 803.5L278.1 802.3L274.6 801.7L273.9 799.9L284.4 803.6L287.9 803.0L285.8 802.4L287.2 800.5L287.7 801.6L289.7 800.5L290.3 800.6L290.0 801.2L292.7 801.7L291.2 801.9L291.8 802.5L298.5 801.0L296.4 802.3L298.4 802.7L300.5 802.1L299.4 801.2L299.3 800.1L300.2 799.5L304.3 801.6L303.0 801.7L302.9 802.5L303.8 802.5L302.3 803.6L300.9 803.8L300.8 804.7L301.4 804.7L300.4 806.5L299.3 807.3L299.1 806.4L296.6 808.0L297.2 808.0L295.4 810.4ZM289.8 798.6L289.4 799.5L288.4 799.7L287.1 798.4L289.8 798.6ZM284.0 801.0L281.5 800.8L282.3 799.8L285.3 800.1L281.2 797.6L283.3 798.6L286.0 798.5L286.6 799.7L285.1 801.4L284.0 801.0ZM333.9 809.1L335.6 809.0L330.2 810.7L324.5 810.8L326.9 811.7L322.4 812.7L326.1 812.3L321.1 814.5L313.9 814.5L310.8 813.0L310.1 811.9L309.5 813.5L312.7 815.1L312.8 816.1L316.6 816.6L317.2 817.5L315.7 818.4L316.4 820.3L313.3 818.2L311.8 818.5L312.0 819.2L310.4 820.2L308.9 818.2L305.9 817.0L304.6 817.6L303.1 817.2L302.5 817.9L304.6 818.0L305.1 819.2L306.4 819.2L305.7 819.9L307.2 820.1L305.6 821.3L308.0 821.1L306.7 822.1L307.8 823.2L307.0 823.7L304.1 823.0L303.2 821.7L301.0 820.5L300.2 821.6L299.1 821.3L300.1 822.5L299.7 823.3L301.3 824.0L300.9 825.5L301.6 826.7L296.5 823.6L297.0 822.9L295.6 822.8L293.5 820.3L295.2 820.6L295.3 819.7L296.7 819.0L295.4 817.6L297.0 817.9L296.3 816.9L297.7 816.4L296.0 815.3L298.5 815.7L298.9 815.3L297.7 814.3L298.7 814.0L298.5 813.2L300.8 812.9L301.4 811.4L302.8 811.6L302.4 810.6L304.4 809.5L307.6 809.0L308.2 810.7L307.9 812.5L309.0 812.1L308.2 809.1L309.0 807.9L306.7 807.2L305.3 805.9L306.4 803.9L308.2 806.2L308.6 805.4L307.9 804.2L309.1 804.1L306.2 802.7L306.7 801.5L308.7 801.6L309.1 800.8L311.7 800.1L309.8 797.1L316.7 799.7L317.8 798.7L321.4 799.1L322.7 800.3L322.9 801.9L320.9 802.6L319.3 801.1L318.4 802.1L319.1 802.1L318.9 803.7L321.1 803.3L321.1 805.2L323.6 805.4L325.1 808.0L325.5 807.9L325.0 806.4L326.4 806.9L324.9 805.5L325.4 804.6L324.2 804.7L323.5 803.4L322.4 804.0L323.8 801.8L325.2 801.0L332.0 800.6L333.8 803.3L334.9 803.8L334.2 804.5L334.7 805.1L331.6 804.9L329.3 804.0L329.4 804.9L326.9 805.1L328.8 806.2L334.7 807.1L334.5 808.1L332.2 808.6L333.9 809.1ZM292.9 798.0L291.7 797.3L296.3 797.3L297.2 798.2L298.2 797.5L299.3 799.1L297.1 799.5L295.3 798.2L292.9 798.0ZM292.5 826.3L294.1 825.6L293.1 827.1L295.2 827.4L294.1 828.4L291.4 827.1L292.5 826.3ZM321.2 817.3L321.3 818.0L320.2 818.4L320.9 818.3L320.9 820.2L318.4 818.1L321.2 817.3ZM293.0 799.3L296.2 800.7L293.5 801.5L292.9 801.1L293.4 800.5L291.2 799.9L293.0 799.3Z" data-prov="Islas Malvinas" tabindex="0" aria-label="Islas Malvinas"></path>
+      <g id="alabels">
       <g class="alabel"><text x="262" y="452">Á1</text><text class="acount" x="262" y="467">8</text></g>
       <g class="alabel"><text x="331" y="158">Á2</text><text class="acount" x="331" y="173">7</text></g>
       <g class="alabel"><text x="186" y="108">Á3</text><text class="acount" x="186" y="123">6</text></g>
       <g class="alabel"><text x="168" y="322">Á4</text><text class="acount" x="168" y="337">7</text></g>
       <g class="alabel"><text x="106" y="638">Á5</text><text class="acount" x="106" y="653">8</text></g>
+      </g>
       <g class="caba-callout" aria-hidden="true">
         <line x1="322" y1="349" x2="356" y2="336"></line>
         <circle cx="322" cy="349" r="3.5"></circle>
@@ -687,19 +709,121 @@
   var hospByProv = {};
   DATA.hospitales.forEach(function(h){ (hospByProv[h.prov] = hospByProv[h.prov] || []).push(h); });
 
+  /* ---- divisiones alternativas del mapa (se elige una con el dropdown) ---- */
+  var NOA = ["Jujuy","Salta","Tucumán","Catamarca","Santiago del Estero","La Rioja"];
+  var NEA = ["Formosa","Chaco","Corrientes","Misiones"];
+  var PATAGONIA = ["Neuquén","Río Negro","Chubut","Santa Cruz","Tierra del Fuego"];
+  var CUYO = ["San Juan","Mendoza","San Luis"];
+  var SCHEMES = [
+    { id:"operativa", nombre:"5 áreas operativas · 6–8 hosp.", prefijo:"Área", abrev:"Á", plural:"áreas",
+      desc:"División de trabajo del estudio: cinco áreas contiguas con carga pareja de hospitales.",
+      nota:"36 hospitales no se reparten exactos entre 5 áreas: el rango 6–8 es la partición más pareja posible manteniendo áreas geográficamente contiguas.",
+      zonas:[
+        {nombre:"Metropolitana", provs:["Ciudad de Buenos Aires","Buenos Aires"], x:262, y:452},
+        {nombre:"NEA · Litoral", provs:["Santa Fe","Entre Ríos","Corrientes","Misiones","Chaco","Formosa"], x:331, y:158},
+        {nombre:"NOA", provs:NOA, x:186, y:108},
+        {nombre:"Centro · Cuyo", provs:["Córdoba","San Juan","Mendoza","San Luis","La Pampa"], x:168, y:322},
+        {nombre:"Patagonia", provs:PATAGONIA, x:106, y:638}
+      ]},
+    { id:"cuatro", nombre:"4 zonas · 8–10 hosp.", prefijo:"Zona", abrev:"Z", plural:"zonas",
+      desc:"Cuatro zonas contiguas con 8 a 10 hospitales: el centro del país se parte en Este y Oeste.",
+      nota:"Cuatro zonas contiguas con entre 8 y 10 hospitales cada una. El Norte reúne NOA y NEA; el centro se parte en Este (CABA, Buenos Aires y Entre Ríos) y Oeste (Córdoba, Santa Fe, Cuyo y La Pampa); el Sur es la Patagonia.",
+      zonas:[
+        {nombre:"Norte", provs:NOA.concat(NEA), x:222, y:128},
+        {nombre:"Centro · Este", provs:["Ciudad de Buenos Aires","Buenos Aires","Entre Ríos"], x:268, y:452},
+        {nombre:"Centro · Oeste", provs:["Santa Fe","Córdoba","San Juan","Mendoza","San Luis","La Pampa"], x:168, y:322},
+        {nombre:"Sur", provs:PATAGONIA, x:106, y:638}
+      ]},
+    { id:"tres", nombre:"3 macrozonas · 12 hosp. c/u", prefijo:"Zona", abrev:"Z", plural:"macrozonas",
+      desc:"Tres macrozonas con exactamente 12 hospitales cada una, manteniendo la contigüidad.",
+      nota:"Tres macrozonas con exactamente 12 hospitales cada una. Para equilibrar la carga, Santa Fe se suma al Norte y Cuyo junto con La Pampa se suman al Sur: es la partición más pareja posible en tres zonas contiguas.",
+      zonas:[
+        {nombre:"Norte", provs:NOA.concat(NEA, ["Santa Fe"]), x:236, y:148},
+        {nombre:"Centro", provs:["Ciudad de Buenos Aires","Buenos Aires","Córdoba","Entre Ríos"], x:258, y:430},
+        {nombre:"Sur", provs:CUYO.concat(["La Pampa"], PATAGONIA), x:118, y:600}
+      ]},
+    { id:"indec", nombre:"5 regiones INDEC · 3–15 hosp.", prefijo:"Región", abrev:"R", plural:"regiones",
+      desc:"Regionalización geográfica tradicional del INDEC. No busca equilibrio de carga.",
+      nota:"Regiones geográficas tradicionales según el INDEC. Esta división no busca equilibrio: la región Pampeana concentra 15 de los 36 hospitales y Cuyo apenas 3.",
+      zonas:[
+        {nombre:"Noroeste (NOA)", provs:NOA, x:186, y:108},
+        {nombre:"Nordeste (NEA)", provs:NEA, x:296, y:128},
+        {nombre:"Cuyo", provs:CUYO, x:108, y:318},
+        {nombre:"Pampeana", provs:["Ciudad de Buenos Aires","Buenos Aires","Córdoba","Santa Fe","Entre Ríos","La Pampa"], x:262, y:452},
+        {nombre:"Patagonia", provs:PATAGONIA, x:106, y:638}
+      ]}
+  ];
+  var current = SCHEMES[0], provZone = {};
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  function corto(p){ return p === "Ciudad de Buenos Aires" ? "CABA" : p; }
+  function svgText(cls, x, y, txt){
+    var t = document.createElementNS(SVG_NS, "text");
+    if(cls) t.setAttribute("class", cls);
+    t.setAttribute("x", x); t.setAttribute("y", y); t.textContent = txt; return t;
+  }
+  function applyScheme(S){
+    current = S; provZone = {};
+    S.zonas.forEach(function(z, i){
+      z.idx = i + 1;
+      z.n = z.provs.reduce(function(a, p){ return a + (hospByProv[p] || []).length; }, 0);
+      z.provs.forEach(function(p){ provZone[p] = z; });
+    });
+    provZone["Islas Malvinas"] = provZone["Tierra del Fuego"];
+    document.querySelectorAll("#mapa .prov").forEach(function(p){
+      var z = provZone[p.getAttribute("data-prov")];
+      p.classList.remove("a1", "a2", "a3", "a4", "a5");
+      if(z) p.classList.add("a" + z.idx);
+    });
+    var g = document.getElementById("alabels");
+    while(g.firstChild) g.removeChild(g.firstChild);
+    S.zonas.forEach(function(z){
+      var gg = document.createElementNS(SVG_NS, "g"); gg.setAttribute("class", "alabel");
+      gg.appendChild(svgText("", z.x, z.y, S.abrev + z.idx));
+      gg.appendChild(svgText("acount", z.x, z.y + 15, z.n));
+      g.appendChild(gg);
+    });
+    var html = "";
+    S.zonas.forEach(function(z){
+      html += '<div class="card" data-area="' + z.idx + '"><span class="chip a' + z.idx + 'bg"></span>' +
+              '<div class="card-txt"><h3>' + S.prefijo + " " + z.idx + " — " + z.nombre + "</h3>" +
+              "<p>" + z.provs.map(corto).join(" · ") + "</p></div>" +
+              '<div class="card-n">' + z.n + "</div></div>";
+    });
+    document.getElementById("cards").innerHTML = html;
+    document.getElementById("nota-division").textContent = S.nota;
+    document.getElementById("div-desc").textContent = S.desc;
+    document.getElementById("mapa").setAttribute("aria-label",
+      "Mapa de la Argentina: 24 jurisdicciones agrupadas en " + S.zonas.length + " " + S.plural + " (" + S.nombre + ")");
+    hide();
+  }
+  var sel = document.getElementById("division");
+  SCHEMES.forEach(function(S){
+    var o = document.createElement("option"); o.value = S.id; o.textContent = S.nombre; sel.appendChild(o);
+  });
+  var saved = null;
+  try { saved = localStorage.getItem("eped-division"); } catch(e){}
+  var inicial = SCHEMES.filter(function(S){ return S.id === saved; })[0] || SCHEMES[0];
+  sel.value = inicial.id;
+  sel.addEventListener("change", function(){
+    var S = SCHEMES.filter(function(x){ return x.id === sel.value; })[0] || SCHEMES[0];
+    applyScheme(S);
+    try { localStorage.setItem("eped-division", S.id); } catch(e){}
+  });
+
   function show(ev){
     var prov = ev.target.getAttribute("data-prov");
     if(!prov) return;
     var isMalv = prov === "Islas Malvinas";
     var key = isMalv ? "Tierra del Fuego" : prov;
-    var area = DATA.provArea[prov];
+    var z = provZone[prov];
+    var area = z ? z.idx : 0;
     var hs = hospByProv[key] || [];
     var head = prov === "Ciudad de Buenos Aires" ? "Ciudad Autónoma de Buenos Aires" : prov;
     var otras = DATA.otras[key] || [];
     var np = hs.reduce(function(s, h){ return s + h.usuarios.length; }, 0) +
              otras.reduce(function(s, o){ return s + o.usuarios.length; }, 0);
     var html = '<div class="tt-head tt-h' + area + '"><b>' + head + "</b>" +
-               "<span>Área " + area + " — " + DATA.areaNames[area] +
+               "<span>" + current.prefijo + " " + area + " — " + (z ? z.nombre : "") +
                (isMalv ? "" : " · " + hs.length + (hs.length === 1 ? " hospital" : " hospitales") +
                  (np ? " · " + np + (np === 1 ? " profesional" : " profesionales") : "")) +
                "</span></div>";
@@ -758,6 +882,7 @@
   });
   document.addEventListener("click", hide);
   document.addEventListener("keydown", function(ev){ if(ev.key === "Escape") hide(); });
+  applyScheme(inicial);
 })();
 </script>
 </body>
