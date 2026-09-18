@@ -10,8 +10,25 @@ con carga equilibrada de hospitales públicos pediátricos / referentes pediátr
 |---|---|
 | `index.html` | Mapa interactivo autocontenido (SVG inline, tooltips por provincia, listado por área) más un segundo mapa **estático de cobertura** que colorea cada provincia según si sus hospitales del estudio tienen usuarios registrados (completa / parcial / solo otras instituciones / sin registros). Funciona abriéndolo directo en el navegador o vía GitHub Pages. |
 | `data/hospitales.json` | Listado estructurado de los 36 hospitales con provincia, localidad, perfil y área asignada. |
+| `data/usuarios_fuera_universo.json` | Usuarios registrados cuya institución declarada no es ninguno de los 36 hospitales del universo. |
+| `data/divisiones.json` | Las cuatro divisiones del mapa interactivo (zonas, provincias y conteo de hospitales). |
 
-## Las 5 áreas
+## Divisiones del mapa interactivo
+
+El mapa interactivo tiene un dropdown para elegir cómo se divide el país. Solo se muestra una
+división a la vez; al cambiarla se recolorean las provincias, las etiquetas del mapa, las tarjetas
+laterales y los tooltips. La elección queda guardada en el navegador.
+
+| División | Zonas | Hospitales por zona | Criterio |
+|---|---|---|---|
+| 5 áreas operativas (por defecto) | 5 | 6–8 | División de trabajo del estudio: contigüidad y carga pareja |
+| 4 zonas | 4 | 8–10 | Norte (NOA+NEA) · Centro Este · Centro Oeste · Sur |
+| 3 macrozonas | 3 | 12 c/u | Santa Fe va al Norte y Cuyo + La Pampa al Sur para equilibrar |
+| 5 regiones INDEC | 5 | 3–15 | Regionalización geográfica tradicional, sin equilibrio de carga |
+
+Las fichas de hospitales siguen siempre la división operativa.
+
+## Las 5 áreas operativas
 
 | Área | Región | Provincias | Hospitales |
 |---|---|---|---|

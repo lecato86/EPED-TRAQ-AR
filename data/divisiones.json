@@ -1,0 +1,51 @@
+{
+  "actualizado": "2026-09-18",
+  "nota": "Divisiones alternativas del mapa interactivo. Se elige una con el dropdown; la 'operativa' es la división oficial del estudio y la que ordena las fichas de hospitales. Los conteos son de hospitales del universo (36 en total).",
+  "divisiones": [
+    {
+      "id": "operativa",
+      "nombre": "5 áreas operativas",
+      "criterio": "Áreas contiguas con carga equilibrada de hospitales (6 a 8 por área).",
+      "zonas": [
+        { "n": 1, "nombre": "Metropolitana", "provincias": ["Ciudad de Buenos Aires", "Buenos Aires"], "hospitales": 8 },
+        { "n": 2, "nombre": "NEA · Litoral", "provincias": ["Santa Fe", "Entre Ríos", "Corrientes", "Misiones", "Chaco", "Formosa"], "hospitales": 7 },
+        { "n": 3, "nombre": "NOA", "provincias": ["Jujuy", "Salta", "Tucumán", "Catamarca", "Santiago del Estero", "La Rioja"], "hospitales": 6 },
+        { "n": 4, "nombre": "Centro · Cuyo", "provincias": ["Córdoba", "San Juan", "Mendoza", "San Luis", "La Pampa"], "hospitales": 7 },
+        { "n": 5, "nombre": "Patagonia", "provincias": ["Neuquén", "Río Negro", "Chubut", "Santa Cruz", "Tierra del Fuego"], "hospitales": 8 }
+      ]
+    },
+    {
+      "id": "cuatro",
+      "nombre": "4 zonas",
+      "criterio": "Cuatro zonas contiguas con 8 a 10 hospitales; el centro del país se parte en Este y Oeste.",
+      "zonas": [
+        { "n": 1, "nombre": "Norte", "provincias": ["Jujuy", "Salta", "Tucumán", "Catamarca", "Santiago del Estero", "La Rioja", "Formosa", "Chaco", "Corrientes", "Misiones"], "hospitales": 10 },
+        { "n": 2, "nombre": "Centro · Este", "provincias": ["Ciudad de Buenos Aires", "Buenos Aires", "Entre Ríos"], "hospitales": 9 },
+        { "n": 3, "nombre": "Centro · Oeste", "provincias": ["Santa Fe", "Córdoba", "San Juan", "Mendoza", "San Luis", "La Pampa"], "hospitales": 9 },
+        { "n": 4, "nombre": "Sur", "provincias": ["Neuquén", "Río Negro", "Chubut", "Santa Cruz", "Tierra del Fuego"], "hospitales": 8 }
+      ]
+    },
+    {
+      "id": "tres",
+      "nombre": "3 macrozonas",
+      "criterio": "Tres macrozonas contiguas con exactamente 12 hospitales cada una.",
+      "zonas": [
+        { "n": 1, "nombre": "Norte", "provincias": ["Jujuy", "Salta", "Tucumán", "Catamarca", "Santiago del Estero", "La Rioja", "Formosa", "Chaco", "Corrientes", "Misiones", "Santa Fe"], "hospitales": 12 },
+        { "n": 2, "nombre": "Centro", "provincias": ["Ciudad de Buenos Aires", "Buenos Aires", "Córdoba", "Entre Ríos"], "hospitales": 12 },
+        { "n": 3, "nombre": "Sur", "provincias": ["San Juan", "Mendoza", "San Luis", "La Pampa", "Neuquén", "Río Negro", "Chubut", "Santa Cruz", "Tierra del Fuego"], "hospitales": 12 }
+      ]
+    },
+    {
+      "id": "indec",
+      "nombre": "5 regiones INDEC",
+      "criterio": "Regionalización geográfica tradicional del INDEC. No busca equilibrio de carga.",
+      "zonas": [
+        { "n": 1, "nombre": "Noroeste (NOA)", "provincias": ["Jujuy", "Salta", "Tucumán", "Catamarca", "Santiago del Estero", "La Rioja"], "hospitales": 6 },
+        { "n": 2, "nombre": "Nordeste (NEA)", "provincias": ["Formosa", "Chaco", "Corrientes", "Misiones"], "hospitales": 4 },
+        { "n": 3, "nombre": "Cuyo", "provincias": ["San Juan", "Mendoza", "San Luis"], "hospitales": 3 },
+        { "n": 4, "nombre": "Pampeana", "provincias": ["Ciudad de Buenos Aires", "Buenos Aires", "Córdoba", "Santa Fe", "Entre Ríos", "La Pampa"], "hospitales": 15 },
+        { "n": 5, "nombre": "Patagonia", "provincias": ["Neuquén", "Río Negro", "Chubut", "Santa Cruz", "Tierra del Fuego"], "hospitales": 8 }
+      ]
+    }
+  ]
+}
